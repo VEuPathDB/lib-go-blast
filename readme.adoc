@@ -1,0 +1,4 @@
+= lib-go-blast
+
+Library for parsing JSON blast cli configs and generating cli calls to blast
+binaries from Go.
