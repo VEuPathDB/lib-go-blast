@@ -96,11 +96,11 @@ const (
 	FormatTypeBlastXML
 	FormatTypeTabular
 	FormatTypeTabularWithCommentLines
-	FormatTypeSeqalignTextASN1
-	FormatTypeSeqalignBinaryASN1
+	FormatTypeSeqAlignTextASN1
+	FormatTypeSeqAlignBinaryASN1
 	FormatTypeCommaSeparatedValues
-	FormatTypeBLASTArchiveASN1
-	FormatTypeSeqalignJSON
+	FormatTypeBlastArchiveASN1
+	FormatTypeSeqAlignJSON
 	FormatTypeMultipleFileBlastJSON
 	FormatTypeMultipleFileBlastXML2
 	FormatTypeSingleFileBlastJSON
