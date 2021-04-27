@@ -6,7 +6,7 @@ import (
 
 	"github.com/francoispqt/gojay"
 	"github.com/veupathdb/lib-go-blast/v1/pkg/blast/consts"
-	"lib-go-blast/v1/pkg/cli"
+	"github.com/veupathdb/lib-go-blast/v1/pkg/cli"
 )
 
 func NewYesSeg() Seg {

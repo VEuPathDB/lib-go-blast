@@ -5,7 +5,7 @@ import (
 
 	. "github.com/veupathdb/lib-go-blast/v1/pkg/blast/consts"
 	"github.com/veupathdb/lib-go-blast/v1/pkg/blast/field"
-	"lib-go-blast/v1/pkg/cli"
+	"github.com/veupathdb/lib-go-blast/v1/pkg/cli"
 )
 
 type BlastConfig interface {

@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
-	. "lib-go-blast/v1/pkg/blast"
+	. "github.com/veupathdb/lib-go-blast/v1/pkg/blast"
 	"github.com/veupathdb/lib-go-blast/v1/pkg/blast/consts"
 	"github.com/veupathdb/lib-go-blast/v1/pkg/blast/field"
 )
