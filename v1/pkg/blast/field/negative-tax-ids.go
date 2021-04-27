@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/francoispqt/gojay"
-	"lib-go-blast/v1/pkg/blast/consts"
+	"github.com/veupathdb/lib-go-blast/v1/pkg/blast/consts"
 )
 
 func DecodeJSONNegativeTaxIDs(dec *gojay.Decoder, val *NegativeTaxIDs) error {

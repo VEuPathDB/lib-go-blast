@@ -4,8 +4,8 @@ import (
 	"os/exec"
 
 	"github.com/francoispqt/gojay"
-	. "lib-go-blast/v1/pkg/blast/consts"
-	"lib-go-blast/v1/pkg/blast/field"
+	. "github.com/veupathdb/lib-go-blast/v1/pkg/blast/consts"
+	"github.com/veupathdb/lib-go-blast/v1/pkg/blast/field"
 	"lib-go-blast/v1/pkg/cli"
 )
 

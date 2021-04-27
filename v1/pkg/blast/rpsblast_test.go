@@ -5,8 +5,8 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 	. "lib-go-blast/v1/pkg/blast"
-	"lib-go-blast/v1/pkg/blast/consts"
-	"lib-go-blast/v1/pkg/blast/field"
+	"github.com/veupathdb/lib-go-blast/v1/pkg/blast/consts"
+	"github.com/veupathdb/lib-go-blast/v1/pkg/blast/field"
 )
 
 func TestRPSBlast_ToCLI(t *testing.T) {
