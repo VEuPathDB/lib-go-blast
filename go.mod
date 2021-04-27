@@ -1,4 +1,4 @@
-module lib-go-blast
+module github.com/veupathdb/lib-go-blast
 
 go 1.16
 
