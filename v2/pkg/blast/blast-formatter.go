@@ -5,6 +5,7 @@ import (
 
 	"github.com/francoispqt/gojay"
 	"github.com/veupathdb/lib-go-blast/v2/internal/traits"
+	"github.com/veupathdb/lib-go-blast/v2/pkg/blast/bval"
 	"github.com/veupathdb/lib-go-blast/v2/pkg/blast/consts"
 	"github.com/veupathdb/lib-go-blast/v2/pkg/blast/field"
 	"github.com/veupathdb/lib-go-blast/v2/pkg/cli"
@@ -13,22 +14,8 @@ import (
 type BlastFormatter struct {
 	traits.CLIConfig
 
-	ShortHelp          field.ShortHelp
-	LongHelp           field.LongHelp
-	Version            field.Version
-	RequestID          field.RequestID
-	ArchiveFile        field.ArchiveFile
-	Format             field.Format
-	ShowGIs            field.ShowGIs
-	NumDescriptions    field.NumDescriptions
-	NumAlignments      field.NumAlignments
-	LineLength         field.LineLength
-	HTML               field.HTML
-	HitSorting         field.HitSorting
-	HSPSorting         field.HSPSorting
-	MaxTargetSequences field.MaxTargetSequences
-	OutFile            field.OutFile
-	ParseDefLines      field.ParseDefLines
+	RequestID   field.RequestID
+	ArchiveFile field.ArchiveFile
 }
 
 func (b *BlastFormatter) UnmarshalJSONObject(dec *gojay.Decoder, key string) error {
@@ -56,9 +43,9 @@ func (b *BlastFormatter) UnmarshalJSONObject(dec *gojay.Decoder, key string) err
 	case consts.FlagHTML:
 		return field.DecodeJSONHTML(dec, &b.HTML)
 	case consts.FlagSortHits:
-		return field.DecodeJSONHitSorting(dec, &b.HitSorting)
+		return field.DecodeJSONHitSorting(dec, &b.SortHits)
 	case consts.FlagSortHSPs:
-		return field.DecodeJSONHSPSorting(dec, &b.HSPSorting)
+		return field.DecodeJSONHSPSorting(dec, &b.SortHSPs)
 	case consts.FlagMaxTargetSequences:
 		return field.DecodeJSONMaxTargetSequences(dec, &b.MaxTargetSequences)
 	case consts.FlagOutFile:
@@ -88,8 +75,8 @@ func (b *BlastFormatter) ToCLI() *exec.Cmd {
 		Append(&b.NumAlignments).
 		Append(&b.LineLength).
 		Append(&b.HTML).
-		Append(&b.HitSorting).
-		Append(&b.HSPSorting).
+		Append(&b.SortHits).
+		Append(&b.SortHSPs).
 		Append(&b.MaxTargetSequences).
 		Append(&b.OutFile).
 		Append(&b.ParseDefLines)
@@ -98,4 +85,16 @@ func (b *BlastFormatter) ToCLI() *exec.Cmd {
 	out.Args = *a
 
 	return out
+}
+
+func (b *BlastFormatter) Validate() bval.ValidationError {
+	e := make(bval.ValidationBuilder)
+
+	e.Validate(&b.CLIConfig)
+
+	if len(e) == 0 {
+		return nil
+	}
+
+	return bval.ValidationError(e)
 }
