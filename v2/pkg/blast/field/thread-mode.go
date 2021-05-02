@@ -12,7 +12,7 @@ const DefaultThreadModeValue = ThreadModeDisable
 
 func DecodeJSONThreadMode(dec *gojay.Decoder, val *ThreadMode) error {
 	val.set = true
-	return dec.DecodeUint8((*uint8)(&val.val))
+	return dec.Uint8((*uint8)(&val.val))
 }
 
 type ThreadMode struct {

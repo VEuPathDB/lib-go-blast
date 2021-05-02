@@ -18,7 +18,7 @@ func NewEmptyHitSorting() HitSorting {
 
 func DecodeJSONHitSorting(dec *gojay.Decoder, val *HitSorting) error {
 	val.set = true
-	return dec.DecodeUint8((*uint8)(&val.val))
+	return dec.Uint8((*uint8)(&val.val))
 }
 
 type HitSorting struct {

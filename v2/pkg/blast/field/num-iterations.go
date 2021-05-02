@@ -19,7 +19,7 @@ func NewEmptyNumIterations() NumIterations {
 
 func DecodeJSONNumIterations(dec *gojay.Decoder, val *NumIterations) error {
 	val.set = true
-	return dec.DecodeUint32(&val.val)
+	return dec.Uint32(&val.val)
 }
 
 type NumIterations struct {

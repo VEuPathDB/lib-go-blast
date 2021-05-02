@@ -20,7 +20,7 @@ func NewEmptyMaxHSPs() MaxHSPs {
 
 func DecodeJSONMaxHSPs(dec *gojay.Decoder, val *MaxHSPs) error {
 	val.set = true
-	return dec.DecodeUint32(&val.val)
+	return dec.Uint32(&val.val)
 }
 
 type MaxHSPs struct {

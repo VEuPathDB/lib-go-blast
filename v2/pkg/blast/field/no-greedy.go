@@ -15,7 +15,7 @@ func NewEmptyNonGreedy() NonGreedy {
 
 func DecodeJSONNonGreedy(dec *gojay.Decoder, val *NonGreedy) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type NonGreedy struct {

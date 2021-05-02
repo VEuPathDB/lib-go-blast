@@ -16,7 +16,7 @@ func NewEmptyMinRawGappedScore() MinRawGappedScore {
 }
 
 func DecodeJSONMinRawGappedScore(dec *gojay.Decoder, val *MinRawGappedScore) error {
-	return dec.DecodeInt32(&val.val)
+	return dec.Int32(&val.val)
 }
 
 type MinRawGappedScore struct {

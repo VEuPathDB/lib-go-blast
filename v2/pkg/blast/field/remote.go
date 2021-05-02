@@ -15,7 +15,7 @@ func NewEmptyRemote() Remote {
 
 func DecodeJSONRemote(dec *gojay.Decoder, val *Remote) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type Remote struct {

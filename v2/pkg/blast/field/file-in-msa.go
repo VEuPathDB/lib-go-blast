@@ -15,7 +15,7 @@ func NewEmptyInMSAFile() InMSAFile {
 
 func DecodeJSONInMSAFile(dec *gojay.Decoder, val *InMSAFile) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type InMSAFile struct {

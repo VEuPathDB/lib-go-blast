@@ -16,7 +16,7 @@ func NewEmptyPseudocount() Pseudocount {
 }
 
 func DecodeJSONPseudocount(dec *gojay.Decoder, val *Pseudocount) error {
-	return dec.DecodeInt32(&val.val)
+	return dec.Int32(&val.val)
 }
 
 type Pseudocount struct {

@@ -15,7 +15,7 @@ func NewEmptyImportSearchStrategy() ImportSearchStrategy {
 
 func DecodeJSONImportSearchStrategy(dec *gojay.Decoder, val *ImportSearchStrategy) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type ImportSearchStrategy struct {

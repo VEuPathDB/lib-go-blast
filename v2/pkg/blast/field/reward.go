@@ -17,7 +17,7 @@ func NewEmptyReward() Reward {
 
 func DecodeJSONReward(dec *gojay.Decoder, val *Reward) error {
 	val.set = true
-	return dec.DecodeUint32(&val.val)
+	return dec.Uint32(&val.val)
 }
 
 type Reward struct {

@@ -15,7 +15,7 @@ func NewEmptyRequestID() RequestID {
 
 func DecodeJSONRequestID(dec *gojay.Decoder, val *RequestID) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type RequestID struct {

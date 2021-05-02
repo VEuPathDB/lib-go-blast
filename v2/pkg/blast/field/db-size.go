@@ -17,7 +17,7 @@ func NewEmptyDBSize() DBSize {
 
 func DecodeJSONDBSize(dec *gojay.Decoder, val *DBSize) error {
 	val.set = true
-	return dec.DecodeInt8(&val.val)
+	return dec.Int8(&val.val)
 }
 
 type DBSize struct {

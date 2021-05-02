@@ -15,7 +15,7 @@ func NewEmptyIgnoreMSAMaster() IgnoreMSAMaster {
 
 func DecodeJSONIgnoreMSAMaster(dec *gojay.Decoder, val *IgnoreMSAMaster) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type IgnoreMSAMaster struct {

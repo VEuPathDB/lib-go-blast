@@ -7,7 +7,7 @@ import (
 
 func DecodeJSONNegativeTaxIDList(dec *gojay.Decoder, val *NegativeTaxIDList) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type NegativeTaxIDList struct {

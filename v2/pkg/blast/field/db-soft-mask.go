@@ -15,7 +15,7 @@ func NewEmptyDBSoftMask() DBSoftMask {
 
 func DecodeJSONDBSoftMask(dec *gojay.Decoder, val *DBSoftMask) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type DBSoftMask struct {

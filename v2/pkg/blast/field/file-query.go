@@ -17,7 +17,7 @@ func NewEmptyQueryFile() QueryFile {
 
 func DecodeJSONQueryFile(dec *gojay.Decoder, val *QueryFile) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type QueryFile struct {

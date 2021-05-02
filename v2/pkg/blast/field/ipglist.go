@@ -7,7 +7,7 @@ import (
 
 func DecodeJSONIPGList(dec *gojay.Decoder, val *IPGList) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type IPGList struct {

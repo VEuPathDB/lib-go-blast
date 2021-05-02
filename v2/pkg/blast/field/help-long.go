@@ -15,7 +15,7 @@ func NewEmptyLongHelp() LongHelp {
 
 func DecodeJSONLongHelp(dec *gojay.Decoder, val *LongHelp) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type LongHelp struct {

@@ -10,7 +10,7 @@ const DefaultBlastPTaskType = BlastPTaskTypeBlastP
 
 func DecodeJSONBlastPTask(dec *gojay.Decoder, val *BlastPTask) error {
 	val.set = true
-	return dec.DecodeString((*string)(&val.val))
+	return dec.String((*string)(&val.val))
 }
 
 type BlastPTask struct {

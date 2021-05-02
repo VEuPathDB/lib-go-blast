@@ -15,7 +15,7 @@ func NewEmptyIndexName() IndexName {
 
 func DecodeJSONIndexName(dec *gojay.Decoder, val *IndexName) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type IndexName struct {

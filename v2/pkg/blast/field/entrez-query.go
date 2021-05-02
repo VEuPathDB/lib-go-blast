@@ -15,7 +15,7 @@ func NewEmptyEntrezQuery() EntrezQuery {
 
 func DecodeJSONEntrezQuery(dec *gojay.Decoder, val *EntrezQuery) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type EntrezQuery struct {

@@ -15,7 +15,7 @@ func NewEmptyShowGIs() ShowGIs {
 
 func DecodeJSONShowGIs(dec *gojay.Decoder, val *ShowGIs) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type ShowGIs struct {

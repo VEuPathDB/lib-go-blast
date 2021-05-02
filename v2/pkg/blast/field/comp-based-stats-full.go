@@ -13,7 +13,7 @@ const DefaultFullCompBasedStats = FullCompBasedStatsScoreAdjustment
 
 func DecodeJSONFullCompBasedStats(dec *gojay.Decoder, val *FullCompBasedStats) error {
 	var tmp string
-	if err := dec.DecodeString(&tmp); err != nil {
+	if err := dec.String(&tmp); err != nil {
 		return err
 	}
 

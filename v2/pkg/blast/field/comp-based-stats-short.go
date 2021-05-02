@@ -13,7 +13,7 @@ const DefaultShortCompBasedStats = ShortCompBasedStatsStatistics
 
 func DecodeJSONShortCompBasedStats(dec *gojay.Decoder, val *ShortCompBasedStats) error {
 	var tmp string
-	if err := dec.DecodeString(&tmp); err != nil {
+	if err := dec.String(&tmp); err != nil {
 		return err
 	}
 

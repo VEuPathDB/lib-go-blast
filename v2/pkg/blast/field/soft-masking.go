@@ -15,7 +15,7 @@ func NewSoftMasking(val bool) SoftMasking {
 
 func DecodeJSONSoftMasking(dec *gojay.Decoder, val *SoftMasking) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type SoftMasking struct {

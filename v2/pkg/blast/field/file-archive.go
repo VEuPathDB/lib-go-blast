@@ -15,7 +15,7 @@ func NewEmptyArchiveFile() ArchiveFile {
 
 func DecodeJSONArchiveFile(dec *gojay.Decoder, val *ArchiveFile) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type ArchiveFile struct {

@@ -15,7 +15,7 @@ func NewEmptySubjectFile() SubjectFile {
 
 func DecodeJSONSubjectFile(dec *gojay.Decoder, val *SubjectFile) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type SubjectFile struct {

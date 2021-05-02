@@ -15,7 +15,7 @@ func NewEmptySavePSSMAfterLastRound() SavePSSMAfterLastRound {
 
 func DecodeJSONSavePSSMAfterLastRound(dec *gojay.Decoder, val *SavePSSMAfterLastRound) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type SavePSSMAfterLastRound struct {

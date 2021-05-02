@@ -15,7 +15,7 @@ func NewEmptyMatrix() Matrix {
 
 func DecodeJSONMatrix(dec *gojay.Decoder, val *Matrix) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type Matrix struct {

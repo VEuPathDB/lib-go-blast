@@ -7,7 +7,7 @@ import (
 
 func DecodeJSONGIList(dec *gojay.Decoder, val *GIList) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type GIList struct {

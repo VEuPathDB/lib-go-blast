@@ -7,7 +7,7 @@ import (
 
 func DecodeJSONNegativeGIList(dec *gojay.Decoder, val *NegativeGIList) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type NegativeGIList struct {

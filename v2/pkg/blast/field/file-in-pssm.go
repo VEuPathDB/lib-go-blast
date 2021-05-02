@@ -15,7 +15,7 @@ func NewEmptyInPSSMFile() InPSSMFile {
 
 func DecodeJSONInPSSMFile(dec *gojay.Decoder, val *InPSSMFile) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type InPSSMFile struct {

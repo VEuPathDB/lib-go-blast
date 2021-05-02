@@ -15,7 +15,7 @@ func NewEmptyPhiPatternFile() PhiPatternFile {
 
 func DecodeJSONPhiPatternFile(dec *gojay.Decoder, val *PhiPatternFile) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type PhiPatternFile struct {

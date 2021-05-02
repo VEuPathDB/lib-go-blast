@@ -8,7 +8,7 @@ import (
 )
 
 func DecodeJSONTaxIDs(dec *gojay.Decoder, val *TaxIDs) error {
-	return dec.DecodeArray(val)
+	return dec.Array(val)
 }
 
 type TaxIDs []string
@@ -27,7 +27,7 @@ func (t TaxIDs) FlagString() string {
 
 func (t *TaxIDs) UnmarshalJSONArray(dec *gojay.Decoder) error {
 	var tmp string
-	if err := dec.DecodeString(&tmp); err != nil {
+	if err := dec.String(&tmp); err != nil {
 		return err
 	}
 

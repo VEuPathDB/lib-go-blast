@@ -18,7 +18,7 @@ func NewEmptyHSPSorting() HSPSorting {
 
 func DecodeJSONHSPSorting(dec *gojay.Decoder, val *HSPSorting) error {
 	val.set = true
-	return dec.DecodeUint8((*uint8)(&val.val))
+	return dec.Uint8((*uint8)(&val.val))
 }
 
 type HSPSorting struct {

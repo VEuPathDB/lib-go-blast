@@ -17,7 +17,7 @@ func NewEmptyExtensionDropoffUngapped() ExtensionDropoffUngapped {
 
 func DecodeJSONExtensionDropoffUngapped(dec *gojay.Decoder, val *ExtensionDropoffUngapped) error {
 	val.set = true
-	return dec.DecodeFloat64(&val.val)
+	return dec.Float64(&val.val)
 }
 
 type ExtensionDropoffUngapped struct {

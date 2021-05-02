@@ -17,7 +17,7 @@ func NewEmptyOffDiagonalRange() OffDiagonalRange {
 
 func DecodeJSONOffDiagonalRange(dec *gojay.Decoder, val *OffDiagonalRange) error {
 	val.set = true
-	return dec.DecodeUint32(&val.val)
+	return dec.Uint32(&val.val)
 }
 
 type OffDiagonalRange struct {

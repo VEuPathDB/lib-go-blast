@@ -15,7 +15,7 @@ func NewEmptyRPSDBFile() RPSDBFile {
 
 func DecodeJSONRPSDBFile(dec *gojay.Decoder, val *RPSDBFile) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type RPSDBFile struct {

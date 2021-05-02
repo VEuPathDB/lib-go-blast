@@ -19,7 +19,7 @@ func NewEmptyNumAlignments() NumAlignments {
 
 func DecodeJSONNumAlignments(dec *gojay.Decoder, val *NumAlignments) error {
 	val.set = true
-	return dec.DecodeUint32(&val.val)
+	return dec.Uint32(&val.val)
 }
 
 type NumAlignments struct {

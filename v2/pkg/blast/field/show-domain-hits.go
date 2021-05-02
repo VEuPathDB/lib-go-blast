@@ -15,7 +15,7 @@ func NewEmptyShowDomainHits() ShowDomainHits {
 
 func DecodeJSONShowDomainHits(dec *gojay.Decoder, val *ShowDomainHits) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type ShowDomainHits struct {

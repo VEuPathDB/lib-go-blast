@@ -15,7 +15,7 @@ func NewUseIndex(val bool) UseIndex {
 
 func DecodeJSONUseIndex(dec *gojay.Decoder, val *UseIndex) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type UseIndex struct {

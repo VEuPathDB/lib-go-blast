@@ -7,7 +7,7 @@ import (
 
 func DecodeJSONSequenceIDList(dec *gojay.Decoder, val *SequenceIDList) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type SequenceIDList struct {

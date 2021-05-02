@@ -15,7 +15,7 @@ func NewEmptyDBHardMask() DBHardMask {
 
 func DecodeJSONDBHardMask(dec *gojay.Decoder, val *DBHardMask) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type DBHardMask struct {

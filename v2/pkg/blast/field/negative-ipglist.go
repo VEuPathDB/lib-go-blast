@@ -7,7 +7,7 @@ import (
 
 func DecodeJSONNegativeIPGList(dec *gojay.Decoder, val *NegativeIPGList) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type NegativeIPGList struct {

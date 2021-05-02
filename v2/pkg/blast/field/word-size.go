@@ -16,7 +16,7 @@ func NewEmptyWordSize() WordSize {
 }
 
 func DecodeJSONWordSize(dec *gojay.Decoder, val *WordSize) error {
-	return dec.DecodeUint32(&val.val)
+	return dec.Uint32(&val.val)
 }
 
 type WordSize struct {

@@ -15,7 +15,7 @@ func NewEmptyExportSearchStrategy() ExportSearchStrategy {
 
 func DecodeJSONExportSearchStrategy(dec *gojay.Decoder, val *ExportSearchStrategy) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type ExportSearchStrategy struct {

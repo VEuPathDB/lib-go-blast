@@ -23,9 +23,9 @@ func (l *location) ArgString() string {
 func (l *location) UnmarshalJSONObject(dec *gojay.Decoder, key string) error {
 	switch key {
 	case consts.KeyStart:
-		return dec.DecodeUint32(&l.Start)
+		return dec.Uint32(&l.Start)
 	case consts.KeyStop:
-		return dec.DecodeUint32(&l.Stop)
+		return dec.Uint32(&l.Stop)
 	default:
 		return nil
 	}
@@ -44,7 +44,7 @@ func NewEmptySubjectLocation() SubjectLocation {
 }
 
 func DecodeJSONSubjectLocation(dec *gojay.Decoder, val *SubjectLocation) error {
-	return dec.DecodeObject(val)
+	return dec.Object(val)
 }
 
 type SubjectLocation struct{ location }
@@ -66,7 +66,7 @@ func NewEmptyQueryLocation() QueryLocation {
 }
 
 func DecodeJSONQueryLocation(dec *gojay.Decoder, val *QueryLocation) error {
-	return dec.DecodeObject(val)
+	return dec.Object(val)
 }
 
 type QueryLocation struct{ location }

@@ -23,7 +23,7 @@ func NewEmptyBestHitScoreEdge() BestHitScoreEdge {
 
 func DecodeJSONBestHitScoreEdge(dec *gojay.Decoder, val *BestHitScoreEdge) error {
 	val.set = true
-	return dec.DecodeFloat64(&val.val)
+	return dec.Float64(&val.val)
 }
 
 type BestHitScoreEdge struct {

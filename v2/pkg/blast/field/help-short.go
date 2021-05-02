@@ -15,7 +15,7 @@ func NewEmptyShortHelp() ShortHelp {
 
 func DecodeJSONShortHelp(dec *gojay.Decoder, val *ShortHelp) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type ShortHelp struct {

@@ -10,7 +10,7 @@ const DefaultTBlastNTaskType = TBlastNTaskTBlastN
 
 func DecodeJSONTBlastNTask(dec *gojay.Decoder, val *TBlastNTask) error {
 	val.set = true
-	return dec.DecodeString((*string)(&val.val))
+	return dec.String((*string)(&val.val))
 }
 
 type TBlastNTask struct {

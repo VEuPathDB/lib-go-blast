@@ -15,7 +15,7 @@ func NewEmptySumStats() SumStats {
 
 func DecodeJSONSumStats(dec *gojay.Decoder, val *SumStats) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type SumStats struct {
