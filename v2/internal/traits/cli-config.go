@@ -90,14 +90,14 @@ func (b *CLIConfig) Validate(errors bval.ValidationBuilder) {
 		ReportTypeLTEQ(
 			uint8(b.Format.Type),
 			uint8(field.FormatTypeFlatQueryAnchoredNoIdentities),
-			FlagNumDescriptions,
-			FlagLineLength,
-			FlagSortHits,
+			&b.NumDescriptions,
+			&b.LineLength,
+			&b.SortHits,
 		).
 		ReportTypeEQ(
 			uint8(b.Format.Type),
 			uint8(field.FormatTypePairwise),
-			FlagSortHSPs,
+			&b.SortHSPs,
 		).
 		Validate(&b.SortHits).
 		Validate(&b.SortHSPs).

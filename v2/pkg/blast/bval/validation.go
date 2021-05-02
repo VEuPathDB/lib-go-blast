@@ -283,20 +283,24 @@ func (e ValidationBuilder) F64ExclusiveRange(flag F64Defaulter, min, max float64
 	return e
 }
 
-func (e ValidationBuilder) ReportTypeEQ(val, exact uint8, keys ...string) ValidationBuilder {
+func (e ValidationBuilder) ReportTypeEQ(val, exact uint8, keys ...Defaulter) ValidationBuilder {
 	if val != exact {
 		for i := range keys {
-			_ = e.AppendError(keys[i], fmt.Sprintf(errReportTypeEQ, keys[i], exact))
+			if !keys[i].IsDefault() {
+				_ = e.AppendError(keys[i].Flag(), fmt.Sprintf(errReportTypeEQ, keys[i].Flag(), exact))
+			}
 		}
 	}
 
 	return e
 }
 
-func (e ValidationBuilder) ReportTypeLTEQ(val, max uint8, keys ...string) ValidationBuilder {
+func (e ValidationBuilder) ReportTypeLTEQ(val, max uint8, keys ...Defaulter) ValidationBuilder {
 	if val > max {
 		for i := range keys {
-			_ = e.AppendError(keys[i], fmt.Sprintf(errReportTypeLTEQ, keys[i], max))
+			if !keys[i].IsDefault() {
+				_ = e.AppendError(keys[i].Flag(), fmt.Sprintf(errReportTypeLTEQ, keys[i].Flag(), max))
+			}
 		}
 	}
 
