@@ -15,7 +15,7 @@ func NewEmptyFilteringDB() FilteringDB {
 
 func DecodeJSONFilteringDB(dec *gojay.Decoder, val *FilteringDB) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type FilteringDB struct {

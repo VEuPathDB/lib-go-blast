@@ -19,7 +19,7 @@ func NewEmptyInclusionEThreshold() InclusionEThreshold {
 
 func DecodeJSONInclusionEThreshold(dec *gojay.Decoder, val *InclusionEThreshold) error {
 	val.set = true
-	return dec.DecodeFloat64(&val.val)
+	return dec.Float64(&val.val)
 }
 
 type InclusionEThreshold struct {

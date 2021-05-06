@@ -15,7 +15,7 @@ func NewEmptyWindowMaskerDB() WindowMaskerDB {
 
 func DecodeJSONWindowMaskerDB(dec *gojay.Decoder, val *WindowMaskerDB) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type WindowMaskerDB struct {

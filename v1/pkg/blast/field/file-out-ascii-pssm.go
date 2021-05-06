@@ -15,7 +15,7 @@ func NewEmptyOutASCIIPSSMFile() OutASCIIPSSMFile {
 
 func DecodeJSONOutASCIIPSSMFile(dec *gojay.Decoder, val *OutASCIIPSSMFile) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type OutASCIIPSSMFile struct {

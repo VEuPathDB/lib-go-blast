@@ -15,7 +15,7 @@ func NewEmptyHTML() HTML {
 
 func DecodeJSONHTML(dec *gojay.Decoder, val *HTML) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type HTML struct {

@@ -19,7 +19,7 @@ func NewEmptyNumDescriptions() NumDescriptions {
 
 func DecodeJSONNumDescriptions(dec *gojay.Decoder, val *NumDescriptions) error {
 	val.set = true
-	return dec.DecodeUint32(&val.val)
+	return dec.Uint32(&val.val)
 }
 
 type NumDescriptions struct {

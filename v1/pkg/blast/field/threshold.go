@@ -17,7 +17,7 @@ func NewEmptyThreshold() Threshold {
 
 func DecodeJSONThreshold(dec *gojay.Decoder, val *Threshold) error {
 	val.set = true
-	return dec.DecodeFloat64(&val.val)
+	return dec.Float64(&val.val)
 }
 
 type Threshold struct {

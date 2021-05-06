@@ -22,7 +22,7 @@ func NewEmptyPercentIdentity() PercentIdentity {
 
 func DecodeJSONPercentIdentity(dec *gojay.Decoder, val *PercentIdentity) error {
 	val.set = true
-	return dec.DecodeFloat64(&val.val)
+	return dec.Float64(&val.val)
 }
 
 type PercentIdentity struct {

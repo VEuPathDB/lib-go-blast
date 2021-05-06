@@ -16,7 +16,7 @@ func NewEmptyGapExtend() GapExtend {
 }
 
 func DecodeJSONGapExtend(dec *gojay.Decoder, val *GapExtend) error {
-	return dec.DecodeInt32(&val.val)
+	return dec.Int32(&val.val)
 }
 
 type GapExtend struct {

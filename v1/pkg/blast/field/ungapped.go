@@ -15,7 +15,7 @@ func NewEmptyUngappedAlignmentsOnly() UngappedAlignmentsOnly {
 
 func DecodeJSONUngappedAlignmentsOnly(dec *gojay.Decoder, val *UngappedAlignmentsOnly) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type UngappedAlignmentsOnly struct {

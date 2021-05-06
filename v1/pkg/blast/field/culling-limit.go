@@ -17,7 +17,7 @@ func NewEmptyCullingLimit() CullingLimit {
 
 func DecodeJSONCullingLimit(dec *gojay.Decoder, val *CullingLimit) error {
 	val.set = true
-	return dec.DecodeUint32(&val.val)
+	return dec.Uint32(&val.val)
 }
 
 type CullingLimit struct {

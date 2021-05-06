@@ -11,7 +11,7 @@ const DefaultMTModeValue = MTModeSplitByDBVolumes
 
 func DecodeJSONMTMode(dec *gojay.Decoder, val *MTMode) error {
 	val.set = true
-	return dec.DecodeUint8((*uint8)(&val.val))
+	return dec.Uint8((*uint8)(&val.val))
 }
 
 type MTMode struct {

@@ -15,7 +15,7 @@ func NewEmptySaveEachPSSM() SaveEachPSSM {
 
 func DecodeJSONSaveEachPSSM(dec *gojay.Decoder, val *SaveEachPSSM) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type SaveEachPSSM struct {

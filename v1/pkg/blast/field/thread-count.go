@@ -19,7 +19,7 @@ func NewEmptyThreadCount() ThreadCount {
 
 func DecodeJSONThreadCount(dec *gojay.Decoder, val *ThreadCount) error {
 	val.set = true
-	return dec.DecodeUint8(&val.val)
+	return dec.Uint8(&val.val)
 }
 
 type ThreadCount struct {

@@ -17,7 +17,7 @@ func NewEmptyWindowSize() WindowSize {
 
 func DecodeJSONWindowSize(dec *gojay.Decoder, val *WindowSize) error {
 	val.set = true
-	return dec.DecodeUint32(&val.val)
+	return dec.Uint32(&val.val)
 }
 
 type WindowSize struct {

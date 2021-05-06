@@ -9,7 +9,7 @@ import (
 )
 
 func DecodeJSONOutFormat(dec *gojay.Decoder, val *Format) error {
-	return dec.DecodeObject(val)
+	return dec.Object(val)
 }
 
 type Format struct {
@@ -63,17 +63,17 @@ func (f Format) FlagString() string {
 func (f Format) UnmarshalJSONObject(dec *gojay.Decoder, key string) error {
 	switch key {
 	case consts.KeyType:
-		return dec.DecodeUint8((*uint8)(&f.Type))
+		return dec.Uint8((*uint8)(&f.Type))
 	case consts.KeyDelimiter:
 		var tmp string
-		if err := dec.DecodeString(&tmp); err != nil {
+		if err := dec.String(&tmp); err != nil {
 			return err
 		} else {
 			f.Delimiter = tmp[0]
 			return nil
 		}
 	case consts.KeyFields:
-		return dec.DecodeArray(&f.Fields)
+		return dec.Array(&f.Fields)
 	default:
 		return nil
 	}
@@ -189,7 +189,7 @@ type FormatFieldSlice []FormatField
 
 func (f *FormatFieldSlice) UnmarshalJSONArray(dec *gojay.Decoder) error {
 	var tmp string
-	if err := dec.DecodeString(&tmp); err != nil {
+	if err := dec.String(&tmp); err != nil {
 		return err
 	}
 

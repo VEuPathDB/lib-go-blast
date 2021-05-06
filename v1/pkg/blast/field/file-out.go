@@ -17,7 +17,7 @@ func NewEmptyOutFile() OutFile {
 
 func DecodeJSONOutFile(dec *gojay.Decoder, val *OutFile) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type OutFile struct {

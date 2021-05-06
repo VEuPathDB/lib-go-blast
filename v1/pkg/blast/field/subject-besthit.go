@@ -15,7 +15,7 @@ func NewEmptySubjectBestHit() SubjectBestHit {
 
 func DecodeJSONSubjectBestHit(dec *gojay.Decoder, val *SubjectBestHit) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type SubjectBestHit struct {

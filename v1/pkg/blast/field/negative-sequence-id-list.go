@@ -7,7 +7,7 @@ import (
 
 func DecodeJSONNegativeSequenceIDList(dec *gojay.Decoder, val *NegativeSequenceIDList) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type NegativeSequenceIDList struct {

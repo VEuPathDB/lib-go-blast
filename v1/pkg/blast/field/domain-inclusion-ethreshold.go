@@ -19,7 +19,7 @@ func NewEmptyDomainInclusionEThreshold() DomainInclusionEThreshold {
 
 func DecodeJSONDomainInclusionEThreshold(dec *gojay.Decoder, val *DomainInclusionEThreshold) error {
 	val.set = true
-	return dec.DecodeFloat64(&val.val)
+	return dec.Float64(&val.val)
 }
 
 type DomainInclusionEThreshold struct {

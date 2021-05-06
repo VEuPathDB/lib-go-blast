@@ -24,7 +24,7 @@ func NewSeg(window int32, locut, hicut float64) Seg {
 func DecodeJSONSeg(dec *gojay.Decoder) (Seg, error) {
 	var tmp1 string
 
-	if dec.DecodeString(&tmp1) == nil {
+	if dec.String(&tmp1) == nil {
 		switch tmp1 {
 		case "yes":
 			return yesSeg{}, nil
@@ -37,7 +37,7 @@ func DecodeJSONSeg(dec *gojay.Decoder) (Seg, error) {
 
 	var tmp2 wlhSeg
 
-	if dec.DecodeObject(&tmp2) == nil {
+	if dec.Object(&tmp2) == nil {
 		return tmp2, nil
 	}
 
@@ -180,11 +180,11 @@ func (w wlhSeg) Hicut() float64 {
 func (w *wlhSeg) UnmarshalJSONObject(dec *gojay.Decoder, key string) error {
 	switch key {
 	case consts.KeyWindow:
-		return dec.DecodeInt32(&w.window)
+		return dec.Int32(&w.window)
 	case consts.KeyLocut:
-		return dec.DecodeFloat64(&w.locut)
+		return dec.Float64(&w.locut)
 	case consts.KeyHicut:
-		return dec.DecodeFloat64(&w.hicut)
+		return dec.Float64(&w.hicut)
 	default:
 		return nil
 	}

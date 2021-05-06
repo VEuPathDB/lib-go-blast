@@ -7,7 +7,7 @@ import (
 
 func DecodeJSONTaxIDList(dec *gojay.Decoder, val *TaxIDList) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type TaxIDList struct {

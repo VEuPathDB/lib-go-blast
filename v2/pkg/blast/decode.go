@@ -10,10 +10,10 @@ func DecodeConfig(tool Tool, b []byte) (BlastConfig, error) {
 	switch tool {
 	case ToolBlastN:
 		out := new(BlastN)
-		return out, gojay.Unmarshal(b, out)
+		return out, gojay.UnmarshalJSONObject(b, out)
 	case ToolBlastP:
 		out := new(BlastP)
-		return out, gojay.Unmarshal(b, out)
+		return out, gojay.UnmarshalJSONObject(b, out)
 	case ToolBlastX:
 		out := new(BlastX)
 		return out, gojay.Unmarshal(b, out)

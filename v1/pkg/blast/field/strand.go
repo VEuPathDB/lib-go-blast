@@ -17,7 +17,7 @@ func NewEmptyStrand() Strand {
 
 func DecodeJSONStrand(dec *gojay.Decoder, val *Strand) error {
 	val.set = true
-	return dec.DecodeString((*string)(&val.val))
+	return dec.String((*string)(&val.val))
 }
 
 type Strand struct {

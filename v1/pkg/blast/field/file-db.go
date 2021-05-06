@@ -15,7 +15,7 @@ func NewEmptyDBFile() DBFile {
 
 func DecodeJSONDBFile(dec *gojay.Decoder, val *DBFile) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type DBFile struct {

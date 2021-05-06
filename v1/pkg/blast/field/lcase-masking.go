@@ -15,7 +15,7 @@ func NewEmptyLowercaseMasking() LowercaseMasking {
 
 func DecodeJSONLowercaseMasking(dec *gojay.Decoder, val *LowercaseMasking) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type LowercaseMasking struct {

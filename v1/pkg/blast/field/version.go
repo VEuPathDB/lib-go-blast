@@ -15,7 +15,7 @@ func NewEmptyVersion() Version {
 
 func DecodeJSONVersion(dec *gojay.Decoder, val *Version) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type Version struct {

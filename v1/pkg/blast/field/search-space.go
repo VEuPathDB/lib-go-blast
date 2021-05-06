@@ -21,7 +21,7 @@ func NewEmptySearchSpace() SearchSpace {
 
 func DecodeJSONSearchSpace(dec *gojay.Decoder, val *SearchSpace) error {
 	val.set = true
-	return dec.DecodeUint8(&val.val)
+	return dec.Uint8(&val.val)
 }
 
 type SearchSpace struct {

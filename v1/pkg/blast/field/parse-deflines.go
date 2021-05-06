@@ -15,7 +15,7 @@ func NewEmptyParseDefLines() ParseDefLines {
 
 func DecodeJSONParseDefLines(dec *gojay.Decoder, val *ParseDefLines) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type ParseDefLines struct {

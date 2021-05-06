@@ -19,7 +19,7 @@ func NewEmptyLineLength() LineLength {
 
 func DecodeJSONLineLength(dec *gojay.Decoder, val *LineLength) error {
 	val.set = true
-	return dec.DecodeUint16(&val.val)
+	return dec.Uint16(&val.val)
 }
 
 type LineLength struct {

@@ -7,7 +7,7 @@ import (
 
 func DecodeJSONTemplateType(dec *gojay.Decoder, val *TemplateType) error {
 	val.set = true
-	return dec.DecodeString((*string)(&val.val))
+	return dec.String((*string)(&val.val))
 }
 
 type TemplateType struct {

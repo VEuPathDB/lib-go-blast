@@ -16,7 +16,7 @@ func NewEmptyGapOpen() GapOpen {
 }
 
 func DecodeJSONGapOpen(dec *gojay.Decoder, val *GapOpen) error {
-	return dec.DecodeInt32(&val.val)
+	return dec.Int32(&val.val)
 }
 
 type GapOpen struct {

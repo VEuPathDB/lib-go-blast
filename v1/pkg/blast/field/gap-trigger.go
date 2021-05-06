@@ -19,7 +19,7 @@ func NewEmptyGapTrigger() GapTrigger {
 
 func DecodeJSONGapTrigger(dec *gojay.Decoder, val *GapTrigger) error {
 	val.set = true
-	return dec.DecodeFloat64(&val.val)
+	return dec.Float64(&val.val)
 }
 
 type GapTrigger struct {

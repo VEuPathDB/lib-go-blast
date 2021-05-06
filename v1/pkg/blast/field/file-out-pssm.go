@@ -15,7 +15,7 @@ func NewEmptyOutPSSMFile() OutPSSMFile {
 
 func DecodeJSONOutPSSMFile(dec *gojay.Decoder, val *OutPSSMFile) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type OutPSSMFile struct {

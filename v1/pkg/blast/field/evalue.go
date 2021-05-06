@@ -17,7 +17,7 @@ func NewEmptyExpectValue() ExpectValue {
 
 func DecodeJSONExpectValue(dec *gojay.Decoder, val *ExpectValue) error {
 	val.set = true
-	return dec.DecodeString(&val.val)
+	return dec.String(&val.val)
 }
 
 type ExpectValue struct {

@@ -11,7 +11,7 @@ const DefaultQueryGenCode uint8 = 1
 
 func DecodeJSONQueryGenCode(dec *gojay.Decoder, val *QueryGenCode) error {
 	val.set = true
-	return dec.DecodeUint8(&val.val)
+	return dec.Uint8(&val.val)
 }
 
 type QueryGenCode struct {

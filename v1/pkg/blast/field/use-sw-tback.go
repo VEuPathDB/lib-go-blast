@@ -15,7 +15,7 @@ func NewEmptyUseSmithWatermanTraceback() UseSmithWatermanTraceback {
 
 func DecodeJSONUseSmithWatermanTraceback(dec *gojay.Decoder, val *UseSmithWatermanTraceback) error {
 	val.set = true
-	return dec.DecodeBool(&val.val)
+	return dec.Bool(&val.val)
 }
 
 type UseSmithWatermanTraceback struct {

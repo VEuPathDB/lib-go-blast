@@ -17,7 +17,7 @@ func NewEmptyExtensionDropoffPrelimGapped() ExtensionDropoffPrelimGapped {
 
 func DecodeJSONExtensionDropoffPrelimGapped(dec *gojay.Decoder, val *ExtensionDropoffPrelimGapped) error {
 	val.set = true
-	return dec.DecodeFloat64(&val.val)
+	return dec.Float64(&val.val)
 }
 
 type ExtensionDropoffPrelimGapped struct {

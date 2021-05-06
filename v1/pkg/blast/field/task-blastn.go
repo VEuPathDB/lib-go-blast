@@ -17,7 +17,7 @@ func NewEmptyBlastNTask() BlastNTask {
 
 func DecodeJSONBlastNTask(dec *gojay.Decoder, val *BlastNTask) error {
 	val.set = true
-	return dec.DecodeString((*string)(&val.val))
+	return dec.String((*string)(&val.val))
 }
 
 type BlastNTask struct {

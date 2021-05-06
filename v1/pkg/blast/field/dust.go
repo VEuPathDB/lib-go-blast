@@ -24,7 +24,7 @@ func NewLWLDust(level, window, linker int32) Dust {
 func DecodeJSONDust(dec *gojay.Decoder) (Dust, error) {
 	var tmp1 string
 
-	if dec.DecodeString(&tmp1) == nil {
+	if dec.String(&tmp1) == nil {
 		switch tmp1 {
 		case "yes":
 			return yesDust{}, nil
@@ -37,7 +37,7 @@ func DecodeJSONDust(dec *gojay.Decoder) (Dust, error) {
 
 	var tmp2 lwlDust
 
-	if dec.DecodeObject(&tmp2) == nil {
+	if dec.Object(&tmp2) == nil {
 		return tmp2, nil
 	}
 
@@ -180,11 +180,11 @@ func (l lwlDust) Linker() int32 {
 func (l *lwlDust) UnmarshalJSONObject(dec *gojay.Decoder, key string) error {
 	switch key {
 	case consts.KeyLevel:
-		return dec.DecodeInt32(&l.level)
+		return dec.Int32(&l.level)
 	case consts.KeyWindow:
-		return dec.DecodeInt32(&l.window)
+		return dec.Int32(&l.window)
 	case consts.KeyLinker:
-		return dec.DecodeInt32(&l.linker)
+		return dec.Int32(&l.linker)
 	default:
 		return nil
 	}

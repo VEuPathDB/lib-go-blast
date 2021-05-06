@@ -11,7 +11,7 @@ const DefaultDBGenCode uint8 = 1
 
 func DecodeJSONDBGenCode(dec *gojay.Decoder, val *DBGenCode) error {
 	val.set = true
-	return dec.DecodeUint8(&val.val)
+	return dec.Uint8(&val.val)
 }
 
 type DBGenCode struct {

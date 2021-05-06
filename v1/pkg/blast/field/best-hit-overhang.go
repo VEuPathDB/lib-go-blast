@@ -22,7 +22,7 @@ func NewEmptyBestHitOverhang() BestHitOverhang {
 
 func DecodeJSONBestHitOverhang(dec *gojay.Decoder, val *BestHitOverhang) error {
 	val.set = true
-	return dec.DecodeFloat64(&val.val)
+	return dec.Float64(&val.val)
 }
 
 type BestHitOverhang struct {
