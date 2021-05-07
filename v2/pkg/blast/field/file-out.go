@@ -56,6 +56,6 @@ func (q *OutFile) IsDefault() bool {
 }
 
 func (q *OutFile) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

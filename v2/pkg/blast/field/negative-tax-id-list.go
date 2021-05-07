@@ -46,6 +46,6 @@ func (q *NegativeTaxIDList) IsDefault() bool {
 }
 
 func (q *NegativeTaxIDList) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

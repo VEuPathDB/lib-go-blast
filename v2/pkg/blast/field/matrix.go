@@ -54,7 +54,7 @@ func (q *Matrix) IsDefault() bool {
 }
 
 func (q *Matrix) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 
 type MatrixType string

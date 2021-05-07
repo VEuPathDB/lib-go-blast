@@ -46,6 +46,6 @@ func (q *NegativeIPGList) IsDefault() bool {
 }
 
 func (q *NegativeIPGList) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

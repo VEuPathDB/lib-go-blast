@@ -54,6 +54,6 @@ func (q *ArchiveFile) IsDefault() bool {
 }
 
 func (q *ArchiveFile) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

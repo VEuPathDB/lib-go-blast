@@ -46,6 +46,6 @@ func (q *SequenceIDList) IsDefault() bool {
 }
 
 func (q *SequenceIDList) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

@@ -54,6 +54,6 @@ func (q *DBFile) IsDefault() bool {
 }
 
 func (q *DBFile) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

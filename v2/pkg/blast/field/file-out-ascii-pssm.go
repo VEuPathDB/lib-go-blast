@@ -54,6 +54,6 @@ func (q *OutASCIIPSSMFile) IsDefault() bool {
 }
 
 func (q *OutASCIIPSSMFile) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

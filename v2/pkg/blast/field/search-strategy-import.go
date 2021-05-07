@@ -54,6 +54,6 @@ func (q *ImportSearchStrategy) IsDefault() bool {
 }
 
 func (q *ImportSearchStrategy) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

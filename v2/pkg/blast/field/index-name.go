@@ -54,6 +54,6 @@ func (q *IndexName) IsDefault() bool {
 }
 
 func (q *IndexName) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

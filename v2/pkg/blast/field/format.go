@@ -35,7 +35,6 @@ func (f *Format) ArgString() string {
 	out.Grow(32)
 	out.Reset()
 
-	out.WriteByte('\'')
 	out.WriteString(f.Type.String())
 
 	if f.Delimiter != 0 {
@@ -48,8 +47,6 @@ func (f *Format) ArgString() string {
 		out.WriteByte(' ')
 		out.WriteString(f.String())
 	}
-
-	out.WriteByte('\'')
 
 	return out.String()
 }

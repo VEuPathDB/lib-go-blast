@@ -54,6 +54,6 @@ func (q *DBSoftMask) IsDefault() bool {
 }
 
 func (q *DBSoftMask) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

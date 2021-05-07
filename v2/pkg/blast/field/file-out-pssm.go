@@ -54,6 +54,6 @@ func (q *OutPSSMFile) IsDefault() bool {
 }
 
 func (q *OutPSSMFile) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

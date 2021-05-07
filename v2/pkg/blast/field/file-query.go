@@ -56,6 +56,6 @@ func (q *QueryFile) IsDefault() bool {
 }
 
 func (q *QueryFile) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

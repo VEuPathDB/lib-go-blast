@@ -46,6 +46,6 @@ func (q *NegativeSequenceIDList) IsDefault() bool {
 }
 
 func (q *NegativeSequenceIDList) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

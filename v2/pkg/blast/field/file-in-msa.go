@@ -54,6 +54,6 @@ func (q *InMSAFile) IsDefault() bool {
 }
 
 func (q *InMSAFile) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

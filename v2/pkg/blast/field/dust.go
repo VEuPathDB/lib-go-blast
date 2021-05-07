@@ -147,7 +147,7 @@ func (l *lwlDust) IsDefault() bool {
 }
 
 func (l *lwlDust) ArgString() string {
-	return fmt.Sprintf("'%d %d %d'", l.Level(), l.Window(), l.Linker())
+	return fmt.Sprintf("%d %d %d", l.Level(), l.Window(), l.Linker())
 }
 
 func (l *lwlDust) FlagString() string {

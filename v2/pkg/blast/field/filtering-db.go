@@ -54,6 +54,6 @@ func (q *FilteringDB) IsDefault() bool {
 }
 
 func (q *FilteringDB) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

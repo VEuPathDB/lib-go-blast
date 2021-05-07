@@ -147,10 +147,10 @@ func (w *wlhSeg) IsDefault() bool {
 }
 
 func (w *wlhSeg) FlagString() string {
-	return w.Flag() + "='" +
+	return w.Flag() + "=" +
 		strconv.Itoa(int(w.window)) + " " +
 		strconv.FormatFloat(w.Locut(), 'f', -1, 64) + " " +
-		strconv.FormatFloat(w.Hicut(), 'f', -1, 64) + "'"
+		strconv.FormatFloat(w.Hicut(), 'f', -1, 64)
 }
 
 func (w *wlhSeg) IsYes() bool {

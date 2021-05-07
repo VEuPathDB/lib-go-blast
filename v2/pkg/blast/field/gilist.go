@@ -46,6 +46,6 @@ func (g *GIList) IsDefault() bool {
 }
 
 func (g *GIList) FlagString() string {
-	return g.Flag() + "='" + g.Get() + "'"
+	return g.Flag() + "=" + g.Get()
 }
 

@@ -54,6 +54,6 @@ func (q *DBHardMask) IsDefault() bool {
 }
 
 func (q *DBHardMask) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 

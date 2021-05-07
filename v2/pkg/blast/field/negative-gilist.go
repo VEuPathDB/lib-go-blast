@@ -46,6 +46,6 @@ func (q *NegativeGIList) IsDefault() bool {
 }
 
 func (q *NegativeGIList) FlagString() string {
-	return q.Flag() + "='" + q.Get() + "'"
+	return q.Flag() + "=" + q.Get()
 }
 
