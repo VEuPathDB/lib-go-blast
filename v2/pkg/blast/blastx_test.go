@@ -42,7 +42,7 @@ func TestBlastX_ToCLI(t *testing.T) {
 					func(n *BlastX) {
 						n.QueryFile.Set("hello")
 					},
-					[]string{ToolBlastX.String(), "-query='hello'"},
+					[]string{ToolBlastX.String(), "-query=hello"},
 				},
 				{
 					func(n *BlastX) {
@@ -55,13 +55,13 @@ func TestBlastX_ToCLI(t *testing.T) {
 					func(n *BlastX) {
 						n.DBFile.Set("hello")
 					},
-					[]string{ToolBlastX.String(), "-db='hello'"},
+					[]string{ToolBlastX.String(), "-db=hello"},
 				},
 				{
 					func(n *BlastX) {
 						n.OutFile.Set("hello")
 					},
-					[]string{ToolBlastX.String(), "-out='hello'"},
+					[]string{ToolBlastX.String(), "-out=hello"},
 				},
 				{
 					func(n *BlastX) {
@@ -80,7 +80,7 @@ func TestBlastX_ToCLI(t *testing.T) {
 						n.Format.Type = field.FormatTypeCommaSeparatedValues
 						n.Format.Delimiter = '@'
 					},
-					[]string{ToolBlastX.String(), "-outfmt='10 delim=@'"},
+					[]string{ToolBlastX.String(), "-outfmt=10 delim=@"},
 				},
 				{
 					func(n *BlastX) {
@@ -88,7 +88,7 @@ func TestBlastX_ToCLI(t *testing.T) {
 						n.Format.Delimiter = '@'
 						n.Format.Fields = field.FormatFieldSlice{field.FormatFieldQueryAccession}
 					},
-					[]string{ToolBlastX.String(), "-outfmt='10 delim=@ qacc'"},
+					[]string{ToolBlastX.String(), "-outfmt=10 delim=@ qacc"},
 				},
 				{
 					func(n *BlastX) {
@@ -148,7 +148,7 @@ func TestBlastX_ToCLI(t *testing.T) {
 					func(n *BlastX) {
 						n.EntrezQuery.Set("goodbye")
 					},
-					[]string{ToolBlastX.String(), "-entrez_query='goodbye'"},
+					[]string{ToolBlastX.String(), "-entrez_query=goodbye"},
 				},
 				{
 					func(n *BlastX) {
@@ -184,13 +184,13 @@ func TestBlastX_ToCLI(t *testing.T) {
 					func(n *BlastX) {
 						n.ImportSearchStrategy.Set("hi")
 					},
-					[]string{ToolBlastX.String(), "-import_search_strategy='hi'"},
+					[]string{ToolBlastX.String(), "-import_search_strategy=hi"},
 				},
 				{
 					func(n *BlastX) {
 						n.ExportSearchStrategy.Set("bi")
 					},
-					[]string{ToolBlastX.String(), "-export_search_strategy='bi'"},
+					[]string{ToolBlastX.String(), "-export_search_strategy=bi"},
 				},
 				{
 					func(n *BlastX) {
@@ -234,61 +234,61 @@ func TestBlastX_ToCLI(t *testing.T) {
 					func(n *BlastX) {
 						n.GIList.Set("hope")
 					},
-					[]string{ToolBlastX.String(), "-gilist='hope'"},
+					[]string{ToolBlastX.String(), "-gilist=hope"},
 				},
 				{
 					func(n *BlastX) {
 						n.SequenceIDList.Set("hell")
 					},
-					[]string{ToolBlastX.String(), "-seqidlist='hell'"},
+					[]string{ToolBlastX.String(), "-seqidlist=hell"},
 				},
 				{
 					func(n *BlastX) {
 						n.NegativeGIList.Set("love")
 					},
-					[]string{ToolBlastX.String(), "-negative_gilist='love'"},
+					[]string{ToolBlastX.String(), "-negative_gilist=love"},
 				},
 				{
 					func(n *BlastX) {
 						n.NegativeSequenceIDList.Set("pain")
 					},
-					[]string{ToolBlastX.String(), "-negative_seqidlist='pain'"},
+					[]string{ToolBlastX.String(), "-negative_seqidlist=pain"},
 				},
 				{
 					func(n *BlastX) {
 						n.TaxIDs = append(n.TaxIDs, "care", "kill")
 					},
-					[]string{ToolBlastX.String(), "-taxids='care,kill'"},
+					[]string{ToolBlastX.String(), "-taxids=care,kill"},
 				},
 				{
 					func(n *BlastX) {
 						n.NegativeTaxIDs = append(n.NegativeTaxIDs, "luck", "hate")
 					},
-					[]string{ToolBlastX.String(), "-negative_taxids='luck,hate'"},
+					[]string{ToolBlastX.String(), "-negative_taxids=luck,hate"},
 				},
 				{
 					func(n *BlastX) {
 						n.TaxIDList.Set("protect")
 					},
-					[]string{ToolBlastX.String(), "-taxidlist='protect'"},
+					[]string{ToolBlastX.String(), "-taxidlist=protect"},
 				},
 				{
 					func(n *BlastX) {
 						n.NegativeTaxIDList.Set("destroy")
 					},
-					[]string{ToolBlastX.String(), "-negative_taxidlist='destroy'"},
+					[]string{ToolBlastX.String(), "-negative_taxidlist=destroy"},
 				},
 				{
 					func(n *BlastX) {
 						n.IPGList.Set("build")
 					},
-					[]string{ToolBlastX.String(), "-ipglist='build'"},
+					[]string{ToolBlastX.String(), "-ipglist=build"},
 				},
 				{
 					func(n *BlastX) {
 						n.NegativeIPGList.Set("break")
 					},
-					[]string{ToolBlastX.String(), "-negative_ipglist='break'"},
+					[]string{ToolBlastX.String(), "-negative_ipglist=break"},
 				},
 			}
 

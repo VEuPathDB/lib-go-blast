@@ -42,7 +42,7 @@ func TestPSIBlast_ToCLI(t *testing.T) {
 					func(n *PSIBlast) {
 						n.QueryFile.Set("hello")
 					},
-					[]string{ToolPSIBlast.String(), "-query='hello'"},
+					[]string{ToolPSIBlast.String(), "-query=hello"},
 				},
 				{
 					func(n *PSIBlast) {
@@ -55,13 +55,13 @@ func TestPSIBlast_ToCLI(t *testing.T) {
 					func(n *PSIBlast) {
 						n.DBFile.Set("hello")
 					},
-					[]string{ToolPSIBlast.String(), "-db='hello'"},
+					[]string{ToolPSIBlast.String(), "-db=hello"},
 				},
 				{
 					func(n *PSIBlast) {
 						n.OutFile.Set("hello")
 					},
-					[]string{ToolPSIBlast.String(), "-out='hello'"},
+					[]string{ToolPSIBlast.String(), "-out=hello"},
 				},
 				{
 					func(n *PSIBlast) {
@@ -80,7 +80,7 @@ func TestPSIBlast_ToCLI(t *testing.T) {
 						n.Format.Type = field.FormatTypeCommaSeparatedValues
 						n.Format.Delimiter = '@'
 					},
-					[]string{ToolPSIBlast.String(), "-outfmt='10 delim=@'"},
+					[]string{ToolPSIBlast.String(), "-outfmt=10 delim=@"},
 				},
 				{
 					func(n *PSIBlast) {
@@ -88,7 +88,7 @@ func TestPSIBlast_ToCLI(t *testing.T) {
 						n.Format.Delimiter = '@'
 						n.Format.Fields = field.FormatFieldSlice{field.FormatFieldQueryAccession}
 					},
-					[]string{ToolPSIBlast.String(), "-outfmt='10 delim=@ qacc'"},
+					[]string{ToolPSIBlast.String(), "-outfmt=10 delim=@ qacc"},
 				},
 				{
 					func(n *PSIBlast) {
@@ -148,7 +148,7 @@ func TestPSIBlast_ToCLI(t *testing.T) {
 					func(n *PSIBlast) {
 						n.EntrezQuery.Set("goodbye")
 					},
-					[]string{ToolPSIBlast.String(), "-entrez_query='goodbye'"},
+					[]string{ToolPSIBlast.String(), "-entrez_query=goodbye"},
 				},
 				{
 					func(n *PSIBlast) {
@@ -184,13 +184,13 @@ func TestPSIBlast_ToCLI(t *testing.T) {
 					func(n *PSIBlast) {
 						n.ImportSearchStrategy.Set("hi")
 					},
-					[]string{ToolPSIBlast.String(), "-import_search_strategy='hi'"},
+					[]string{ToolPSIBlast.String(), "-import_search_strategy=hi"},
 				},
 				{
 					func(n *PSIBlast) {
 						n.ExportSearchStrategy.Set("bi")
 					},
-					[]string{ToolPSIBlast.String(), "-export_search_strategy='bi'"},
+					[]string{ToolPSIBlast.String(), "-export_search_strategy=bi"},
 				},
 				{
 					func(n *PSIBlast) {
@@ -234,61 +234,61 @@ func TestPSIBlast_ToCLI(t *testing.T) {
 					func(n *PSIBlast) {
 						n.GIList.Set("hope")
 					},
-					[]string{ToolPSIBlast.String(), "-gilist='hope'"},
+					[]string{ToolPSIBlast.String(), "-gilist=hope"},
 				},
 				{
 					func(n *PSIBlast) {
 						n.SequenceIDList.Set("hell")
 					},
-					[]string{ToolPSIBlast.String(), "-seqidlist='hell'"},
+					[]string{ToolPSIBlast.String(), "-seqidlist=hell"},
 				},
 				{
 					func(n *PSIBlast) {
 						n.NegativeGIList.Set("love")
 					},
-					[]string{ToolPSIBlast.String(), "-negative_gilist='love'"},
+					[]string{ToolPSIBlast.String(), "-negative_gilist=love"},
 				},
 				{
 					func(n *PSIBlast) {
 						n.NegativeSequenceIDList.Set("pain")
 					},
-					[]string{ToolPSIBlast.String(), "-negative_seqidlist='pain'"},
+					[]string{ToolPSIBlast.String(), "-negative_seqidlist=pain"},
 				},
 				{
 					func(n *PSIBlast) {
 						n.TaxIDs = append(n.TaxIDs, "care", "kill")
 					},
-					[]string{ToolPSIBlast.String(), "-taxids='care,kill'"},
+					[]string{ToolPSIBlast.String(), "-taxids=care,kill"},
 				},
 				{
 					func(n *PSIBlast) {
 						n.NegativeTaxIDs = append(n.NegativeTaxIDs, "luck", "hate")
 					},
-					[]string{ToolPSIBlast.String(), "-negative_taxids='luck,hate'"},
+					[]string{ToolPSIBlast.String(), "-negative_taxids=luck,hate"},
 				},
 				{
 					func(n *PSIBlast) {
 						n.TaxIDList.Set("protect")
 					},
-					[]string{ToolPSIBlast.String(), "-taxidlist='protect'"},
+					[]string{ToolPSIBlast.String(), "-taxidlist=protect"},
 				},
 				{
 					func(n *PSIBlast) {
 						n.NegativeTaxIDList.Set("destroy")
 					},
-					[]string{ToolPSIBlast.String(), "-negative_taxidlist='destroy'"},
+					[]string{ToolPSIBlast.String(), "-negative_taxidlist=destroy"},
 				},
 				{
 					func(n *PSIBlast) {
 						n.IPGList.Set("build")
 					},
-					[]string{ToolPSIBlast.String(), "-ipglist='build'"},
+					[]string{ToolPSIBlast.String(), "-ipglist=build"},
 				},
 				{
 					func(n *PSIBlast) {
 						n.NegativeIPGList.Set("break")
 					},
-					[]string{ToolPSIBlast.String(), "-negative_ipglist='break'"},
+					[]string{ToolPSIBlast.String(), "-negative_ipglist=break"},
 				},
 			}
 

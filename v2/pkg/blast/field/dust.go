@@ -22,6 +22,12 @@ func NewLWLDust(level, window, linker int32) Dust {
 }
 
 func DecodeJSONDust(dec *gojay.Decoder) (Dust, error) {
+	var tmp2 lwlDust
+
+	if dec.Object(&tmp2) == nil {
+		return &tmp2, nil
+	}
+
 	var tmp1 string
 
 	if dec.String(&tmp1) == nil {
@@ -33,12 +39,6 @@ func DecodeJSONDust(dec *gojay.Decoder) (Dust, error) {
 		default:
 			return nil, errors.New("Invalid dust value.")
 		}
-	}
-
-	var tmp2 lwlDust
-
-	if dec.Object(&tmp2) == nil {
-		return &tmp2, nil
 	}
 
 	return nil, errors.New("Invalid dust value.")

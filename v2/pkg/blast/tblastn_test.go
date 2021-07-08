@@ -42,7 +42,7 @@ func TestTBlastN_ToCLI(t *testing.T) {
 					func(n *TBlastN) {
 						n.QueryFile.Set("hello")
 					},
-					[]string{ToolTBlastN.String(), "-query='hello'"},
+					[]string{ToolTBlastN.String(), "-query=hello"},
 				},
 				{
 					func(n *TBlastN) {
@@ -55,13 +55,13 @@ func TestTBlastN_ToCLI(t *testing.T) {
 					func(n *TBlastN) {
 						n.DBFile.Set("hello")
 					},
-					[]string{ToolTBlastN.String(), "-db='hello'"},
+					[]string{ToolTBlastN.String(), "-db=hello"},
 				},
 				{
 					func(n *TBlastN) {
 						n.OutFile.Set("hello")
 					},
-					[]string{ToolTBlastN.String(), "-out='hello'"},
+					[]string{ToolTBlastN.String(), "-out=hello"},
 				},
 				{
 					func(n *TBlastN) {
@@ -80,7 +80,7 @@ func TestTBlastN_ToCLI(t *testing.T) {
 						n.Format.Type = field.FormatTypeCommaSeparatedValues
 						n.Format.Delimiter = '@'
 					},
-					[]string{ToolTBlastN.String(), "-outfmt='10 delim=@'"},
+					[]string{ToolTBlastN.String(), "-outfmt=10 delim=@"},
 				},
 				{
 					func(n *TBlastN) {
@@ -88,13 +88,13 @@ func TestTBlastN_ToCLI(t *testing.T) {
 						n.Format.Delimiter = '@'
 						n.Format.Fields = field.FormatFieldSlice{field.FormatFieldQueryAccession}
 					},
-					[]string{ToolTBlastN.String(), "-outfmt='10 delim=@ qacc'"},
+					[]string{ToolTBlastN.String(), "-outfmt=10 delim=@ qacc"},
 				},
 				{
 					func(n *TBlastN) {
 						n.ShowGIs.Set(true)
 					},
-					[]string{ToolTBlastN.String(), "-show_gis"},
+					[]string{ToolTBlastN.String(), consts.FlagShowGIs},
 				},
 				{
 					func(n *TBlastN) {
@@ -118,7 +118,7 @@ func TestTBlastN_ToCLI(t *testing.T) {
 					func(n *TBlastN) {
 						n.HTML.Set(true)
 					},
-					[]string{ToolTBlastN.String(), "-html"},
+					[]string{ToolTBlastN.String(), consts.FlagHTML},
 				},
 				{
 					func(n *TBlastN) {
@@ -142,13 +142,13 @@ func TestTBlastN_ToCLI(t *testing.T) {
 					func(n *TBlastN) {
 						n.LowercaseMasking.Set(true)
 					},
-					[]string{ToolTBlastN.String(), "-lcase_masking"},
+					[]string{ToolTBlastN.String(), consts.FlagLowercaseMasking},
 				},
 				{
 					func(n *TBlastN) {
 						n.EntrezQuery.Set("goodbye")
 					},
-					[]string{ToolTBlastN.String(), "-entrez_query='goodbye'"},
+					[]string{ToolTBlastN.String(), "-entrez_query=goodbye"},
 				},
 				{
 					func(n *TBlastN) {
@@ -184,13 +184,13 @@ func TestTBlastN_ToCLI(t *testing.T) {
 					func(n *TBlastN) {
 						n.ImportSearchStrategy.Set("hi")
 					},
-					[]string{ToolTBlastN.String(), "-import_search_strategy='hi'"},
+					[]string{ToolTBlastN.String(), "-import_search_strategy=hi"},
 				},
 				{
 					func(n *TBlastN) {
 						n.ExportSearchStrategy.Set("bi")
 					},
-					[]string{ToolTBlastN.String(), "-export_search_strategy='bi'"},
+					[]string{ToolTBlastN.String(), "-export_search_strategy=bi"},
 				},
 				{
 					func(n *TBlastN) {
@@ -208,13 +208,13 @@ func TestTBlastN_ToCLI(t *testing.T) {
 					func(n *TBlastN) {
 						n.ParseDefLines.Set(true)
 					},
-					[]string{ToolTBlastN.String(), "-parse_deflines"},
+					[]string{ToolTBlastN.String(), consts.FlagParseDefLines},
 				},
 				{
 					func(n *TBlastN) {
 						n.Remote.Set(true)
 					},
-					[]string{ToolTBlastN.String(), "-remote"},
+					[]string{ToolTBlastN.String(), consts.FlagRemote},
 				},
 			}
 
@@ -234,49 +234,49 @@ func TestTBlastN_ToCLI(t *testing.T) {
 					func(n *TBlastN) {
 						n.GIList.Set("hope")
 					},
-					[]string{ToolTBlastN.String(), "-gilist='hope'"},
+					[]string{ToolTBlastN.String(), "-gilist=hope"},
 				},
 				{
 					func(n *TBlastN) {
 						n.SequenceIDList.Set("hell")
 					},
-					[]string{ToolTBlastN.String(), "-seqidlist='hell'"},
+					[]string{ToolTBlastN.String(), "-seqidlist=hell"},
 				},
 				{
 					func(n *TBlastN) {
 						n.NegativeGIList.Set("love")
 					},
-					[]string{ToolTBlastN.String(), "-negative_gilist='love'"},
+					[]string{ToolTBlastN.String(), "-negative_gilist=love"},
 				},
 				{
 					func(n *TBlastN) {
 						n.NegativeSequenceIDList.Set("pain")
 					},
-					[]string{ToolTBlastN.String(), "-negative_seqidlist='pain'"},
+					[]string{ToolTBlastN.String(), "-negative_seqidlist=pain"},
 				},
 				{
 					func(n *TBlastN) {
 						n.TaxIDs = append(n.TaxIDs, "care", "kill")
 					},
-					[]string{ToolTBlastN.String(), "-taxids='care,kill'"},
+					[]string{ToolTBlastN.String(), "-taxids=care,kill"},
 				},
 				{
 					func(n *TBlastN) {
 						n.NegativeTaxIDs = append(n.NegativeTaxIDs, "luck", "hate")
 					},
-					[]string{ToolTBlastN.String(), "-negative_taxids='luck,hate'"},
+					[]string{ToolTBlastN.String(), "-negative_taxids=luck,hate"},
 				},
 				{
 					func(n *TBlastN) {
 						n.TaxIDList.Set("protect")
 					},
-					[]string{ToolTBlastN.String(), "-taxidlist='protect'"},
+					[]string{ToolTBlastN.String(), "-taxidlist=protect"},
 				},
 				{
 					func(n *TBlastN) {
 						n.NegativeTaxIDList.Set("destroy")
 					},
-					[]string{ToolTBlastN.String(), "-negative_taxidlist='destroy'"},
+					[]string{ToolTBlastN.String(), "-negative_taxidlist=destroy"},
 				},
 			}
 

@@ -42,7 +42,7 @@ func TestBlastN_ToCLI(t *testing.T) {
 					func(n *BlastN) {
 						n.QueryFile.Set("hello")
 					},
-					[]string{ToolBlastN.String(), "-query='hello'"},
+					[]string{ToolBlastN.String(), "-query=hello"},
 				},
 				{
 					func(n *BlastN) {
@@ -55,13 +55,13 @@ func TestBlastN_ToCLI(t *testing.T) {
 					func(n *BlastN) {
 						n.DBFile.Set("hello")
 					},
-					[]string{ToolBlastN.String(), "-db='hello'"},
+					[]string{ToolBlastN.String(), "-db=hello"},
 				},
 				{
 					func(n *BlastN) {
 						n.OutFile.Set("hello")
 					},
-					[]string{ToolBlastN.String(), "-out='hello'"},
+					[]string{ToolBlastN.String(), "-out=hello"},
 				},
 				{
 					func(n *BlastN) {
@@ -80,7 +80,7 @@ func TestBlastN_ToCLI(t *testing.T) {
 						n.Format.Type = field.FormatTypeCommaSeparatedValues
 						n.Format.Delimiter = '@'
 					},
-					[]string{ToolBlastN.String(), "-outfmt='10 delim=@'"},
+					[]string{ToolBlastN.String(), "-outfmt=10 delim=@"},
 				},
 				{
 					func(n *BlastN) {
@@ -88,7 +88,7 @@ func TestBlastN_ToCLI(t *testing.T) {
 						n.Format.Delimiter = '@'
 						n.Format.Fields = field.FormatFieldSlice{field.FormatFieldQueryAccession}
 					},
-					[]string{ToolBlastN.String(), "-outfmt='10 delim=@ qacc'"},
+					[]string{ToolBlastN.String(), "-outfmt=10 delim=@ qacc"},
 				},
 				{
 					func(n *BlastN) {
@@ -148,7 +148,7 @@ func TestBlastN_ToCLI(t *testing.T) {
 					func(n *BlastN) {
 						n.EntrezQuery.Set("goodbye")
 					},
-					[]string{ToolBlastN.String(), "-entrez_query='goodbye'"},
+					[]string{ToolBlastN.String(), "-entrez_query=goodbye"},
 				},
 				{
 					func(n *BlastN) {
@@ -184,13 +184,13 @@ func TestBlastN_ToCLI(t *testing.T) {
 					func(n *BlastN) {
 						n.ImportSearchStrategy.Set("hi")
 					},
-					[]string{ToolBlastN.String(), "-import_search_strategy='hi'"},
+					[]string{ToolBlastN.String(), "-import_search_strategy=hi"},
 				},
 				{
 					func(n *BlastN) {
 						n.ExportSearchStrategy.Set("bi")
 					},
-					[]string{ToolBlastN.String(), "-export_search_strategy='bi'"},
+					[]string{ToolBlastN.String(), "-export_search_strategy=bi"},
 				},
 				{
 					func(n *BlastN) {
@@ -234,49 +234,49 @@ func TestBlastN_ToCLI(t *testing.T) {
 					func(n *BlastN) {
 						n.GIList.Set("hope")
 					},
-					[]string{ToolBlastN.String(), "-gilist='hope'"},
+					[]string{ToolBlastN.String(), "-gilist=hope"},
 				},
 				{
 					func(n *BlastN) {
 						n.SequenceIDList.Set("hell")
 					},
-					[]string{ToolBlastN.String(), "-seqidlist='hell'"},
+					[]string{ToolBlastN.String(), "-seqidlist=hell"},
 				},
 				{
 					func(n *BlastN) {
 						n.NegativeGIList.Set("love")
 					},
-					[]string{ToolBlastN.String(), "-negative_gilist='love'"},
+					[]string{ToolBlastN.String(), "-negative_gilist=love"},
 				},
 				{
 					func(n *BlastN) {
 						n.NegativeSequenceIDList.Set("pain")
 					},
-					[]string{ToolBlastN.String(), "-negative_seqidlist='pain'"},
+					[]string{ToolBlastN.String(), "-negative_seqidlist=pain"},
 				},
 				{
 					func(n *BlastN) {
 						n.TaxIDs = append(n.TaxIDs, "care", "kill")
 					},
-					[]string{ToolBlastN.String(), "-taxids='care,kill'"},
+					[]string{ToolBlastN.String(), "-taxids=care,kill"},
 				},
 				{
 					func(n *BlastN) {
 						n.NegativeTaxIDs = append(n.NegativeTaxIDs, "luck", "hate")
 					},
-					[]string{ToolBlastN.String(), "-negative_taxids='luck,hate'"},
+					[]string{ToolBlastN.String(), "-negative_taxids=luck,hate"},
 				},
 				{
 					func(n *BlastN) {
 						n.TaxIDList.Set("protect")
 					},
-					[]string{ToolBlastN.String(), "-taxidlist='protect'"},
+					[]string{ToolBlastN.String(), "-taxidlist=protect"},
 				},
 				{
 					func(n *BlastN) {
 						n.NegativeTaxIDList.Set("destroy")
 					},
-					[]string{ToolBlastN.String(), "-negative_taxidlist='destroy'"},
+					[]string{ToolBlastN.String(), "-negative_taxidlist=destroy"},
 				},
 			}
 
@@ -377,13 +377,13 @@ func TestBlastN_ToCLI(t *testing.T) {
 					func(n *BlastN) {
 						n.IndexName.Set("tacos")
 					},
-					[]string{ToolBlastN.String(), "-index_name='tacos'"},
+					[]string{ToolBlastN.String(), "-index_name=tacos"},
 				},
 				{
 					func(n *BlastN) {
 						n.SubjectFile.Set("ambivalence")
 					},
-					[]string{ToolBlastN.String(), "-subject='ambivalence'"},
+					[]string{ToolBlastN.String(), "-subject=ambivalence"},
 				},
 				{
 					func(n *BlastN) {
@@ -396,13 +396,13 @@ func TestBlastN_ToCLI(t *testing.T) {
 					func(n *BlastN) {
 						n.Dust = field.NewLWLDust(10, 11, 12)
 					},
-					[]string{ToolBlastN.String(), "-dust='10 11 12'"},
+					[]string{ToolBlastN.String(), "-dust=10 11 12"},
 				},
 				{
 					func(n *BlastN) {
 						n.FilteringDB.Set("grapes")
 					},
-					[]string{ToolBlastN.String(), "-filtering_db='grapes'"},
+					[]string{ToolBlastN.String(), "-filtering_db=grapes"},
 				},
 				{
 					func(n *BlastN) {
@@ -414,19 +414,19 @@ func TestBlastN_ToCLI(t *testing.T) {
 					func(n *BlastN) {
 						n.WindowMaskerDB.Set("hairy")
 					},
-					[]string{ToolBlastN.String(), "-window_masker_db='hairy'"},
+					[]string{ToolBlastN.String(), "-window_masker_db=hairy"},
 				},
 				{
 					func(n *BlastN) {
 						n.DBSoftMask.Set("ninety")
 					},
-					[]string{ToolBlastN.String(), "-db_soft_mask='ninety'"},
+					[]string{ToolBlastN.String(), "-db_soft_mask=ninety"},
 				},
 				{
 					func(n *BlastN) {
 						n.DBHardMask.Set("acorn")
 					},
-					[]string{ToolBlastN.String(), "-db_hard_mask='acorn'"},
+					[]string{ToolBlastN.String(), "-db_hard_mask=acorn"},
 				},
 				{
 					func(n *BlastN) {

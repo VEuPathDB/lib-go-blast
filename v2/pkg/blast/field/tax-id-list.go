@@ -46,6 +46,6 @@ func (t *TaxIDList) IsDefault() bool {
 }
 
 func (t *TaxIDList) FlagString() string {
-	return t.Flag() + "='" + t.Get() + "'"
+	return t.Flag() + "=" + t.Get()
 }
 

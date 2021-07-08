@@ -42,7 +42,7 @@ func TestTBlastX_ToCLI(t *testing.T) {
 					func(n *TBlastX) {
 						n.QueryFile.Set("hello")
 					},
-					[]string{ToolTBlastX.String(), "-query='hello'"},
+					[]string{ToolTBlastX.String(), "-query=hello"},
 				},
 				{
 					func(n *TBlastX) {
@@ -55,13 +55,13 @@ func TestTBlastX_ToCLI(t *testing.T) {
 					func(n *TBlastX) {
 						n.DBFile.Set("hello")
 					},
-					[]string{ToolTBlastX.String(), "-db='hello'"},
+					[]string{ToolTBlastX.String(), "-db=hello"},
 				},
 				{
 					func(n *TBlastX) {
 						n.OutFile.Set("hello")
 					},
-					[]string{ToolTBlastX.String(), "-out='hello'"},
+					[]string{ToolTBlastX.String(), "-out=hello"},
 				},
 				{
 					func(n *TBlastX) {
@@ -80,7 +80,7 @@ func TestTBlastX_ToCLI(t *testing.T) {
 						n.Format.Type = field.FormatTypeCommaSeparatedValues
 						n.Format.Delimiter = '@'
 					},
-					[]string{ToolTBlastX.String(), "-outfmt='10 delim=@'"},
+					[]string{ToolTBlastX.String(), "-outfmt=10 delim=@"},
 				},
 				{
 					func(n *TBlastX) {
@@ -88,7 +88,7 @@ func TestTBlastX_ToCLI(t *testing.T) {
 						n.Format.Delimiter = '@'
 						n.Format.Fields = field.FormatFieldSlice{field.FormatFieldQueryAccession}
 					},
-					[]string{ToolTBlastX.String(), "-outfmt='10 delim=@ qacc'"},
+					[]string{ToolTBlastX.String(), "-outfmt=10 delim=@ qacc"},
 				},
 				{
 					func(n *TBlastX) {
@@ -148,7 +148,7 @@ func TestTBlastX_ToCLI(t *testing.T) {
 					func(n *TBlastX) {
 						n.EntrezQuery.Set("goodbye")
 					},
-					[]string{ToolTBlastX.String(), "-entrez_query='goodbye'"},
+					[]string{ToolTBlastX.String(), "-entrez_query=goodbye"},
 				},
 				{
 					func(n *TBlastX) {
@@ -184,13 +184,13 @@ func TestTBlastX_ToCLI(t *testing.T) {
 					func(n *TBlastX) {
 						n.ImportSearchStrategy.Set("hi")
 					},
-					[]string{ToolTBlastX.String(), "-import_search_strategy='hi'"},
+					[]string{ToolTBlastX.String(), "-import_search_strategy=hi"},
 				},
 				{
 					func(n *TBlastX) {
 						n.ExportSearchStrategy.Set("bi")
 					},
-					[]string{ToolTBlastX.String(), "-export_search_strategy='bi'"},
+					[]string{ToolTBlastX.String(), "-export_search_strategy=bi"},
 				},
 				{
 					func(n *TBlastX) {
@@ -234,49 +234,49 @@ func TestTBlastX_ToCLI(t *testing.T) {
 					func(n *TBlastX) {
 						n.GIList.Set("hope")
 					},
-					[]string{ToolTBlastX.String(), "-gilist='hope'"},
+					[]string{ToolTBlastX.String(), "-gilist=hope"},
 				},
 				{
 					func(n *TBlastX) {
 						n.SequenceIDList.Set("hell")
 					},
-					[]string{ToolTBlastX.String(), "-seqidlist='hell'"},
+					[]string{ToolTBlastX.String(), "-seqidlist=hell"},
 				},
 				{
 					func(n *TBlastX) {
 						n.NegativeGIList.Set("love")
 					},
-					[]string{ToolTBlastX.String(), "-negative_gilist='love'"},
+					[]string{ToolTBlastX.String(), "-negative_gilist=love"},
 				},
 				{
 					func(n *TBlastX) {
 						n.NegativeSequenceIDList.Set("pain")
 					},
-					[]string{ToolTBlastX.String(), "-negative_seqidlist='pain'"},
+					[]string{ToolTBlastX.String(), "-negative_seqidlist=pain"},
 				},
 				{
 					func(n *TBlastX) {
 						n.TaxIDs = append(n.TaxIDs, "care", "kill")
 					},
-					[]string{ToolTBlastX.String(), "-taxids='care,kill'"},
+					[]string{ToolTBlastX.String(), "-taxids=care,kill"},
 				},
 				{
 					func(n *TBlastX) {
 						n.NegativeTaxIDs = append(n.NegativeTaxIDs, "luck", "hate")
 					},
-					[]string{ToolTBlastX.String(), "-negative_taxids='luck,hate'"},
+					[]string{ToolTBlastX.String(), "-negative_taxids=luck,hate"},
 				},
 				{
 					func(n *TBlastX) {
 						n.TaxIDList.Set("protect")
 					},
-					[]string{ToolTBlastX.String(), "-taxidlist='protect'"},
+					[]string{ToolTBlastX.String(), "-taxidlist=protect"},
 				},
 				{
 					func(n *TBlastX) {
 						n.NegativeTaxIDList.Set("destroy")
 					},
-					[]string{ToolTBlastX.String(), "-negative_taxidlist='destroy'"},
+					[]string{ToolTBlastX.String(), "-negative_taxidlist=destroy"},
 				},
 			}
 

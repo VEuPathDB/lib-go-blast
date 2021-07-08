@@ -22,6 +22,12 @@ func NewSeg(window int32, locut, hicut float64) Seg {
 }
 
 func DecodeJSONSeg(dec *gojay.Decoder) (Seg, error) {
+	var tmp2 wlhSeg
+
+	if dec.Object(&tmp2) == nil {
+		return &tmp2, nil
+	}
+
 	var tmp1 string
 
 	if dec.String(&tmp1) == nil {
@@ -33,12 +39,6 @@ func DecodeJSONSeg(dec *gojay.Decoder) (Seg, error) {
 		default:
 			return nil, errors.New("Invalid seg value.")
 		}
-	}
-
-	var tmp2 wlhSeg
-
-	if dec.Object(&tmp2) == nil {
-		return &tmp2, nil
 	}
 
 	return nil, errors.New("Invalid seg value.")
@@ -191,6 +191,6 @@ func (w *wlhSeg) UnmarshalJSONObject(dec *gojay.Decoder, key string) error {
 }
 
 func (w *wlhSeg) NKeys() int {
-	return 0
+	return 3
 }
 

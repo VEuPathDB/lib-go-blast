@@ -42,7 +42,7 @@ func TestDeltaBlast_ToCLI(t *testing.T) {
 					func(n *DeltaBlast) {
 						n.QueryFile.Set("hello")
 					},
-					[]string{ToolDeltaBlast.String(), "-query='hello'"},
+					[]string{ToolDeltaBlast.String(), "-query=hello"},
 				},
 				{
 					func(n *DeltaBlast) {
@@ -55,13 +55,13 @@ func TestDeltaBlast_ToCLI(t *testing.T) {
 					func(n *DeltaBlast) {
 						n.DBFile.Set("hello")
 					},
-					[]string{ToolDeltaBlast.String(), "-db='hello'"},
+					[]string{ToolDeltaBlast.String(), "-db=hello"},
 				},
 				{
 					func(n *DeltaBlast) {
 						n.OutFile.Set("hello")
 					},
-					[]string{ToolDeltaBlast.String(), "-out='hello'"},
+					[]string{ToolDeltaBlast.String(), "-out=hello"},
 				},
 				{
 					func(n *DeltaBlast) {
@@ -80,7 +80,7 @@ func TestDeltaBlast_ToCLI(t *testing.T) {
 						n.Format.Type = field.FormatTypeCommaSeparatedValues
 						n.Format.Delimiter = '@'
 					},
-					[]string{ToolDeltaBlast.String(), "-outfmt='10 delim=@'"},
+					[]string{ToolDeltaBlast.String(), "-outfmt=10 delim=@"},
 				},
 				{
 					func(n *DeltaBlast) {
@@ -88,7 +88,7 @@ func TestDeltaBlast_ToCLI(t *testing.T) {
 						n.Format.Delimiter = '@'
 						n.Format.Fields = field.FormatFieldSlice{field.FormatFieldQueryAccession}
 					},
-					[]string{ToolDeltaBlast.String(), "-outfmt='10 delim=@ qacc'"},
+					[]string{ToolDeltaBlast.String(), "-outfmt=10 delim=@ qacc"},
 				},
 				{
 					func(n *DeltaBlast) {
@@ -148,7 +148,7 @@ func TestDeltaBlast_ToCLI(t *testing.T) {
 					func(n *DeltaBlast) {
 						n.EntrezQuery.Set("goodbye")
 					},
-					[]string{ToolDeltaBlast.String(), "-entrez_query='goodbye'"},
+					[]string{ToolDeltaBlast.String(), "-entrez_query=goodbye"},
 				},
 				{
 					func(n *DeltaBlast) {
@@ -184,13 +184,13 @@ func TestDeltaBlast_ToCLI(t *testing.T) {
 					func(n *DeltaBlast) {
 						n.ImportSearchStrategy.Set("hi")
 					},
-					[]string{ToolDeltaBlast.String(), "-import_search_strategy='hi'"},
+					[]string{ToolDeltaBlast.String(), "-import_search_strategy=hi"},
 				},
 				{
 					func(n *DeltaBlast) {
 						n.ExportSearchStrategy.Set("bi")
 					},
-					[]string{ToolDeltaBlast.String(), "-export_search_strategy='bi'"},
+					[]string{ToolDeltaBlast.String(), "-export_search_strategy=bi"},
 				},
 				{
 					func(n *DeltaBlast) {
@@ -234,49 +234,49 @@ func TestDeltaBlast_ToCLI(t *testing.T) {
 					func(n *DeltaBlast) {
 						n.GIList.Set("hope")
 					},
-					[]string{ToolDeltaBlast.String(), "-gilist='hope'"},
+					[]string{ToolDeltaBlast.String(), "-gilist=hope"},
 				},
 				{
 					func(n *DeltaBlast) {
 						n.SequenceIDList.Set("hell")
 					},
-					[]string{ToolDeltaBlast.String(), "-seqidlist='hell'"},
+					[]string{ToolDeltaBlast.String(), "-seqidlist=hell"},
 				},
 				{
 					func(n *DeltaBlast) {
 						n.NegativeGIList.Set("love")
 					},
-					[]string{ToolDeltaBlast.String(), "-negative_gilist='love'"},
+					[]string{ToolDeltaBlast.String(), "-negative_gilist=love"},
 				},
 				{
 					func(n *DeltaBlast) {
 						n.NegativeSequenceIDList.Set("pain")
 					},
-					[]string{ToolDeltaBlast.String(), "-negative_seqidlist='pain'"},
+					[]string{ToolDeltaBlast.String(), "-negative_seqidlist=pain"},
 				},
 				{
 					func(n *DeltaBlast) {
 						n.TaxIDs = append(n.TaxIDs, "care", "kill")
 					},
-					[]string{ToolDeltaBlast.String(), "-taxids='care,kill'"},
+					[]string{ToolDeltaBlast.String(), "-taxids=care,kill"},
 				},
 				{
 					func(n *DeltaBlast) {
 						n.NegativeTaxIDs = append(n.NegativeTaxIDs, "luck", "hate")
 					},
-					[]string{ToolDeltaBlast.String(), "-negative_taxids='luck,hate'"},
+					[]string{ToolDeltaBlast.String(), "-negative_taxids=luck,hate"},
 				},
 				{
 					func(n *DeltaBlast) {
 						n.TaxIDList.Set("protect")
 					},
-					[]string{ToolDeltaBlast.String(), "-taxidlist='protect'"},
+					[]string{ToolDeltaBlast.String(), "-taxidlist=protect"},
 				},
 				{
 					func(n *DeltaBlast) {
 						n.NegativeTaxIDList.Set("destroy")
 					},
-					[]string{ToolDeltaBlast.String(), "-negative_taxidlist='destroy'"},
+					[]string{ToolDeltaBlast.String(), "-negative_taxidlist=destroy"},
 				},
 			}
 

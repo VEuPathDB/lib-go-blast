@@ -42,7 +42,7 @@ func TestRPSTBlastN_ToCLI(t *testing.T) {
 					func(n *RPSTBlastN) {
 						n.QueryFile.Set("hello")
 					},
-					[]string{ToolRPSTBlastN.String(), "-query='hello'"},
+					[]string{ToolRPSTBlastN.String(), "-query=hello"},
 				},
 				{
 					func(n *RPSTBlastN) {
@@ -55,13 +55,13 @@ func TestRPSTBlastN_ToCLI(t *testing.T) {
 					func(n *RPSTBlastN) {
 						n.DBFile.Set("hello")
 					},
-					[]string{ToolRPSTBlastN.String(), "-db='hello'"},
+					[]string{ToolRPSTBlastN.String(), "-db=hello"},
 				},
 				{
 					func(n *RPSTBlastN) {
 						n.OutFile.Set("hello")
 					},
-					[]string{ToolRPSTBlastN.String(), "-out='hello'"},
+					[]string{ToolRPSTBlastN.String(), "-out=hello"},
 				},
 				{
 					func(n *RPSTBlastN) {
@@ -80,7 +80,7 @@ func TestRPSTBlastN_ToCLI(t *testing.T) {
 						n.Format.Type = field.FormatTypeCommaSeparatedValues
 						n.Format.Delimiter = '@'
 					},
-					[]string{ToolRPSTBlastN.String(), "-outfmt='10 delim=@'"},
+					[]string{ToolRPSTBlastN.String(), "-outfmt=10 delim=@"},
 				},
 				{
 					func(n *RPSTBlastN) {
@@ -88,7 +88,7 @@ func TestRPSTBlastN_ToCLI(t *testing.T) {
 						n.Format.Delimiter = '@'
 						n.Format.Fields = field.FormatFieldSlice{field.FormatFieldQueryAccession}
 					},
-					[]string{ToolRPSTBlastN.String(), "-outfmt='10 delim=@ qacc'"},
+					[]string{ToolRPSTBlastN.String(), "-outfmt=10 delim=@ qacc"},
 				},
 				{
 					func(n *RPSTBlastN) {
@@ -148,7 +148,7 @@ func TestRPSTBlastN_ToCLI(t *testing.T) {
 					func(n *RPSTBlastN) {
 						n.EntrezQuery.Set("goodbye")
 					},
-					[]string{ToolRPSTBlastN.String(), "-entrez_query='goodbye'"},
+					[]string{ToolRPSTBlastN.String(), "-entrez_query=goodbye"},
 				},
 				{
 					func(n *RPSTBlastN) {
@@ -184,13 +184,13 @@ func TestRPSTBlastN_ToCLI(t *testing.T) {
 					func(n *RPSTBlastN) {
 						n.ImportSearchStrategy.Set("hi")
 					},
-					[]string{ToolRPSTBlastN.String(), "-import_search_strategy='hi'"},
+					[]string{ToolRPSTBlastN.String(), "-import_search_strategy=hi"},
 				},
 				{
 					func(n *RPSTBlastN) {
 						n.ExportSearchStrategy.Set("bi")
 					},
-					[]string{ToolRPSTBlastN.String(), "-export_search_strategy='bi'"},
+					[]string{ToolRPSTBlastN.String(), "-export_search_strategy=bi"},
 				},
 				{
 					func(n *RPSTBlastN) {

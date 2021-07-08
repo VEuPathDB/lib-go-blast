@@ -22,7 +22,7 @@ func (t TaxIDs) IsDefault() bool {
 }
 
 func (t TaxIDs) FlagString() string {
-	return t.Flag() + "='" + strings.Join(t, ",") + "'"
+	return t.Flag() + "=" + strings.Join(t, ",")
 }
 
 func (t *TaxIDs) UnmarshalJSONArray(dec *gojay.Decoder) error {
