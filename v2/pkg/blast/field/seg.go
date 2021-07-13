@@ -22,26 +22,36 @@ func NewSeg(window int32, locut, hicut float64) Seg {
 }
 
 func DecodeJSONSeg(dec *gojay.Decoder) (Seg, error) {
-	var tmp2 wlhSeg
+	var raw = make(gojay.EmbeddedJSON, 0, 512)
 
-	if dec.Object(&tmp2) == nil {
-		return &tmp2, nil
+	if err := dec.EmbeddedJSON(&raw); err != nil {
+		return nil, errors.New("Invalid dust value: " + err.Error())
 	}
 
-	var tmp1 string
+	if len(raw) == 0 {
+		return nil, errors.New("Invalid dust value: empty json value")
+	}
 
-	if dec.String(&tmp1) == nil {
-		switch tmp1 {
-		case "yes":
+	if raw[0] == '"' {
+		var tmp = string(raw)
+
+		switch tmp {
+		case `"yes"`:
 			return yesSeg{}, nil
-		case "no":
+		case `"no"`:
 			return noSeg{}, nil
 		default:
-			return nil, errors.New("Invalid seg value.")
+			return nil, errors.New("Invalid dust value: " + tmp)
 		}
 	}
 
-	return nil, errors.New("Invalid seg value.")
+	var tmp2 wlhSeg
+
+	if err := gojay.UnmarshalJSONObject(raw, &tmp2); err == nil {
+		return &tmp2, nil
+	} else {
+		return nil, errors.New("Invalid dust value: " + err.Error())
+	}
 }
 
 type Seg interface {

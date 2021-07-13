@@ -22,26 +22,36 @@ func NewLWLDust(level, window, linker int32) Dust {
 }
 
 func DecodeJSONDust(dec *gojay.Decoder) (Dust, error) {
-	var tmp2 lwlDust
+	var raw = make(gojay.EmbeddedJSON, 0, 512)
 
-	if dec.Object(&tmp2) == nil {
-		return &tmp2, nil
+	if err := dec.EmbeddedJSON(&raw); err != nil {
+		return nil, errors.New("Invalid dust value: " + err.Error())
 	}
 
-	var tmp1 string
+	if len(raw) == 0 {
+		return nil, errors.New("Invalid dust value: empty json value")
+	}
 
-	if dec.String(&tmp1) == nil {
-		switch tmp1 {
-		case "yes":
+	if raw[0] == '"' {
+		var tmp = string(raw)
+
+		switch tmp {
+		case `"yes"`:
 			return yesDust{}, nil
-		case "no":
+		case `"no"`:
 			return noDust{}, nil
 		default:
-			return nil, errors.New("Invalid dust value.")
+			return nil, errors.New("Invalid dust value: " + tmp)
 		}
 	}
 
-	return nil, errors.New("Invalid dust value.")
+	var tmp2 lwlDust
+
+	if err := gojay.UnmarshalJSONObject(raw, &tmp2); err == nil {
+		return &tmp2, nil
+	} else {
+		return nil, errors.New("Invalid dust value: " + err.Error())
+	}
 }
 
 type Dust interface {

@@ -7,3 +7,5 @@ require (
 	github.com/francoispqt/gojay v1.2.13
 	github.com/smartystreets/goconvey v1.6.4
 )
+
+replace github.com/francoispqt/gojay v1.2.13 => github.com/Foxcapades/gojay v1.2.13-p1
