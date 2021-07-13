@@ -3,6 +3,7 @@ package blast_test
 import (
 	"testing"
 
+	"github.com/francoispqt/gojay"
 	. "github.com/smartystreets/goconvey/convey"
 	. "github.com/veupathdb/lib-go-blast/v2/pkg/blast"
 	"github.com/veupathdb/lib-go-blast/v2/pkg/blast/consts"
@@ -329,6 +330,48 @@ func TestBlastX_ToCLI(t *testing.T) {
 				test.mod(&tgt)
 				So(tgt.ToCLI().Args, ShouldResemble, test.out)
 			}
+		})
+	})
+}
+
+func TestBlastX_UnmarshalJSONObject(t *testing.T) {
+	Convey("blast.BlastX.UnmarshalJSONObject", t, func() {
+		// Regression coverage (Seg deserialization failed)
+		Convey("Seg Deserialization", func() {
+			Convey("Yes Seg", func() {
+				json := []byte(`{"-seg":"yes"}`)
+
+				test := new(BlastX)
+
+				err := gojay.UnmarshalJSONObject(json, test)
+
+				So(err, ShouldBeNil)
+				So(test.Seg.IsYes(), ShouldBeTrue)
+			})
+
+			Convey("No Seg", func() {
+				json := []byte(`{"-seg":"no"}`)
+
+				test := new(BlastX)
+
+				err := gojay.UnmarshalJSONObject(json, test)
+
+				So(err, ShouldBeNil)
+				So(test.Seg.IsNo(), ShouldBeTrue)
+			})
+
+			Convey("Value Seg", func() {
+				json := []byte(`{"-seg":{"window":1,"locut":2.2,"hicut":3.3}}`)
+
+				test := new(BlastX)
+
+				err := gojay.UnmarshalJSONObject(json, test)
+
+				So(err, ShouldBeNil)
+				So(test.Seg.Window(), ShouldEqual, 1)
+				So(test.Seg.Locut(), ShouldEqual, 2.2)
+				So(test.Seg.Hicut(), ShouldEqual, 3.3)
+			})
 		})
 	})
 }

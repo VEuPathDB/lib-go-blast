@@ -3,6 +3,7 @@ package blast_test
 import (
 	"testing"
 
+	"github.com/francoispqt/gojay"
 	. "github.com/smartystreets/goconvey/convey"
 	. "github.com/veupathdb/lib-go-blast/v2/pkg/blast"
 	"github.com/veupathdb/lib-go-blast/v2/pkg/blast/consts"
@@ -215,6 +216,12 @@ func TestBlastN_ToCLI(t *testing.T) {
 						n.Remote.Set(true)
 					},
 					[]string{ToolBlastN.String(), "-remote"},
+				},
+				{
+					func(n *BlastN) {
+						n.Dust = field.NewLWLDust(3, 4, 5)
+					},
+					[]string{ToolBlastN.String(), "-dust=3 4 5"},
 				},
 			}
 
@@ -507,6 +514,48 @@ func TestBlastN_ToCLI(t *testing.T) {
 				test.mod(&tgt)
 				So(tgt.ToCLI().Args, ShouldResemble, test.out)
 			}
+		})
+	})
+}
+
+func TestBlastN_UnmarshalJSONObject(t *testing.T) {
+	Convey("blast.BlastN.UnmarshalJSONObject", t, func() {
+		// Regression coverage (Dust deserialization failed)
+		Convey("Dust Deserialization", func() {
+			Convey("Yes Dust", func() {
+				json := []byte(`{"-dust":"yes"}`)
+
+				test := new(BlastN)
+
+				err := gojay.UnmarshalJSONObject(json, test)
+
+				So(err, ShouldBeNil)
+				So(test.Dust.IsYes(), ShouldBeTrue)
+			})
+
+			Convey("No Dust", func() {
+				json := []byte(`{"-dust":"no"}`)
+
+				test := new(BlastN)
+
+				err := gojay.UnmarshalJSONObject(json, test)
+
+				So(err, ShouldBeNil)
+				So(test.Dust.IsNo(), ShouldBeTrue)
+			})
+
+			Convey("Value Dust", func() {
+				json := []byte(`{"-dust":{"level":1,"window":2,"linker":3}}`)
+
+				test := new(BlastN)
+
+				err := gojay.UnmarshalJSONObject(json, test)
+
+				So(err, ShouldBeNil)
+				So(test.Dust.Level(), ShouldEqual, 1)
+				So(test.Dust.Window(), ShouldEqual, 2)
+				So(test.Dust.Linker(), ShouldEqual, 3)
+			})
 		})
 	})
 }
