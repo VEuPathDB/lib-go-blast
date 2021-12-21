@@ -73,12 +73,17 @@ func (f *ShortCompBasedStats) FlagString() string {
 
 func (f *ShortCompBasedStats) Validate(em bval.ValidationBuilder) {
 	if !f.IsDefault() {
-		em.InvalidUint8Enum(
-			f.Flag(),
-			uint8(f.Get()),
-			uint8(ShortCompBasedStatsNone),
-			uint8(ShortCompBasedStatsStatistics),
-		)
+		switch f.val {
+		case ShortCompBasedStatsNone, ShortCompBasedStatsStatistics:
+			// do nothing
+		default:
+			em.InvalidUint8Enum(
+				f.Flag(),
+				uint8(f.Get()),
+				uint8(ShortCompBasedStatsNone),
+				uint8(ShortCompBasedStatsStatistics),
+			)
+		}
 	}
 }
 

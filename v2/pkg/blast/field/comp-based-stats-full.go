@@ -77,14 +77,19 @@ func (f *FullCompBasedStats) FlagString() string {
 
 func (f *FullCompBasedStats) Validate(dm bval.ValidationBuilder) {
 	if !f.IsDefault() {
-		_ = dm.InvalidUint8Enum(
-			f.Flag(),
-			uint8(f.Get()),
-			uint8(FullCompBasedStatsNone),
-			uint8(FullCompBasedStatsStatistics),
-			uint8(FullCompBasedStatsScoreAdjustment),
-			uint8(FullCompBasedStatsScoreAdjustmentUnconditional),
-		)
+		switch f.val {
+		case FullCompBasedStatsNone, FullCompBasedStatsStatistics, FullCompBasedStatsScoreAdjustment, FullCompBasedStatsScoreAdjustmentUnconditional:
+			// do nothing
+		default:
+			dm.InvalidUint8Enum(
+				f.Flag(),
+				uint8(f.Get()),
+				uint8(FullCompBasedStatsNone),
+				uint8(FullCompBasedStatsStatistics),
+				uint8(FullCompBasedStatsScoreAdjustment),
+				uint8(FullCompBasedStatsScoreAdjustmentUnconditional),
+			)
+		}
 	}
 }
 
