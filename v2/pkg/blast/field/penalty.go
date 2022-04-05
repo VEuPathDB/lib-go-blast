@@ -19,6 +19,7 @@ func NewEmptyPenalty() Penalty {
 }
 
 func DecodeJSONPenalty(dec *gojay.Decoder, val *Penalty) error {
+	val.set = true
 	return dec.Int32(&val.val)
 }
 
