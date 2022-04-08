@@ -16,6 +16,7 @@ func NewEmptyWindowMaskerTaxID() WindowMaskerTaxID {
 }
 
 func DecodeJSONWindowMaskerTaxID(dec *gojay.Decoder, val *WindowMaskerTaxID) error {
+	val.set = true
 	return dec.Int32(&val.val)
 }
 

@@ -16,6 +16,7 @@ func NewEmptyGapExtend() GapExtend {
 }
 
 func DecodeJSONGapExtend(dec *gojay.Decoder, val *GapExtend) error {
+	val.set = true
 	return dec.Int32(&val.val)
 }
 

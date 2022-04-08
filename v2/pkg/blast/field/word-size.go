@@ -16,6 +16,7 @@ func NewEmptyWordSize() WordSize {
 }
 
 func DecodeJSONWordSize(dec *gojay.Decoder, val *WordSize) error {
+	val.set = true
 	return dec.Uint32(&val.val)
 }
 
@@ -61,4 +62,3 @@ func (b *WordSize) ArgString() string {
 func (b *WordSize) FlagString() string {
 	return b.Flag() + "=" + b.ArgString()
 }
-
